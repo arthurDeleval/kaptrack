@@ -1,0 +1,12 @@
+<div class="container">
+<%= link_to 'My recipes', recipes_path %> ||
+  <%= link_to 'Edit', edit_recipe_path %> ||
+  <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
+  <h1><%=@recipe.name%></h1>
+    <%= @recipe.recipe_description %> ||
+    <p><%= @recipe.price %>€ ||
+      <%= @recipe.preparation_time %>(min) ||
+      <%= @recipe.specificity %> ||
+      <%= @recipe.meal_description %>
+    </p>
+</div>
