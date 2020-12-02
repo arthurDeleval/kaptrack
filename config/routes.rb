@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   resources :recipes
   resources :checklists
   resources :menu, only: [ :index ]
+  resources :products
+  resources :suppliers
+
 end

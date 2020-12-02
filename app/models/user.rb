@@ -2,8 +2,6 @@ class User < ApplicationRecord
   has_many :assignments
   has_many :chatrooms
   has_many :plannings
-  validates :first_name, presence: true
-  validates :last_name, presence: true
   validates :email, presence: true
   validates :phone_number, presence: true
   validates :role, presence: true
