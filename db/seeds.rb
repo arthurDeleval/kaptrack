@@ -13,6 +13,3 @@ Checklist.create!(title: "Faire la tondeuse", description: "now")
 
 puts "#{Checklist.count}"
 
-User.create! (first_name: "Hicham", last_name: "troplong", email: "hicham@email.com", phone_number: '092323233', role: "user")
-
-puts "#{User.count}"
