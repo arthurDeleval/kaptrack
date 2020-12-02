@@ -7,3 +7,19 @@
   <%= link_to 'Edit', edit_checklist_path, class: 'btn btn-primary mt-2' %>
   <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
 </div>
+
+<div class="container">
+  <%= simple_form_for [@checklist, @task], remote: true do |f| %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <% @checklist.tasks.each do |task| %>
+    <%= task.description %>
+    <%= f.label :validation %>
+    <%= f.check_box :validation, class: 'btn btn-checked'%>
+  <% end %>
+  <% end %>
+</div>
+
