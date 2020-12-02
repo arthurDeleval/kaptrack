@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :checklists
   devise_for :users
   root to: 'pages#home'
   get 'about', to: 'pages#about'

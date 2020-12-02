@@ -1,0 +1,9 @@
+<div class="container">
+  <% @checklists.each do |checklist| %>
+  <%= checklist.title %>
+  <div class="container">
+    <%= link_to 'See more details', checklist_path(checklist) %>
+  </div>
+  <% end %>
+  <%= link_to 'Add a checklist', new_checklist_path, class: 'btn btn-primary mt-2' %>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>All Recipes</h1>
+  <%= link_to "Add recipe", new_recipe_path %>
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe) do  %>
+      <h2><%= recipe.name %></h2>
+      <%= recipe.recipe_description %> ||
+      <p><%= recipe.price %>€ ||
+        <%= recipe.preparation_time %>(min) ||
+        <%= recipe.specificity %> ||
+        <%= recipe.meal_description %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
