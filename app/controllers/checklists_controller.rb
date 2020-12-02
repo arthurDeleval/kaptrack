@@ -1,4 +1,6 @@
 class ChecklistsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+
   def index
     @checklists = Checklist.all
   end
@@ -28,10 +30,10 @@ class ChecklistsController < ApplicationController
 
   def update
     @checklist = Checklist.find(params[:id])
-    if @checklist.save(checklist_params)
-      redirect_to @checklist
+    if @checklist.update(checklist_params)
+      redirect_to checklists_path
     else
-      render :new
+      render :edit
     end
   end
 

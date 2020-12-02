@@ -1,2 +1,9 @@
-<h1>Checklists#show</h1>
-<p>Find me in app/views/checklists/show.html.erb</p>
+<div class="container">
+  <%= @checklist.title %>
+  <div class="container">
+    <%= @checklist.description %>
+  </div>
+  <%= link_to 'Back to index', checklists_path, class: 'btn btn-primary mt-2' %>
+  <%= link_to 'Edit', edit_checklist_path, class: 'btn btn-primary mt-2' %>
+  <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
+</div>
