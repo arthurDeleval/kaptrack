@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for @recipe do |f| %>
+    <%= f.input :name %>
+    <%= f.input :specificity %>
+    <%= f.input :recipe_description %>
+    <%= f.input :meal_description %>
+    <%= f.input :preparation_time %>
+    <%= f.input :price %>
+    <%= f.input :menu_visible %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
