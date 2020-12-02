@@ -1,0 +1,38 @@
+.sidebar-container {
+  height: 100vh;
+}
+
+.headers-sidebar {
+  background-color: #7594D4;
+  color: white;
+  padding: 20px;
+  width: 180px;
+  flex-shrink: 0;
+
+  .avatar-large {
+    width: 56px;
+    border-radius: 50%;
+  }
+  
+  .side-link {
+    color: white;
+    font-size: 24px;
+  }
+}
+
+.container-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-headers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    margin-top: 38px;
+  }
+}
