@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   resources :performances, only: [ :index, :create ]
   resources :lots, only: [ :index, :create, :new, :edit, :update, :destroy ]
   resources :recipes
-  resources :checklists
+  resources :checklists do
+    resources :tasks, only: [:index, :edit, :update, :create]
   resources :menu, only: [ :index ]
   resources :products
   resources :suppliers
 
+end
 end
