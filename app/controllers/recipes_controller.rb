@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
+
   def index
-    @recipes = Recipe.all
+    @recipes = policy_scope(Recipe).order(created_at: :desc)
   end
 
   def show
@@ -13,6 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    authorize @recipe
     @recipe.user = current_user
     if @recipe.save
       redirect_to recipes_path

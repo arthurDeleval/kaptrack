@@ -1,6 +1,8 @@
 <div class="container">
 <%= link_to 'My recipes', recipes_path %> ||
-  <%= link_to 'Edit', edit_recipe_path %> ||
+  <% if policy(recipe).edit? %>
+    <%= link_to 'Update', edit_recipe_path %> ||
+  <% end %>
   <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
   <h1><%=@recipe.name%></h1>
     <%= @recipe.recipe_description %> ||

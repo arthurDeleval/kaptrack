@@ -1,6 +1,8 @@
 <div class="container">
   <h1>All Recipes</h1>
-  <%= link_to "Add recipe", new_recipe_path %>
+  <% if policy(Recipe).create? %>
+    <%= link_to "Add recipe", new_recipe_path %>
+  <% end %>
   <% @recipes.each do |recipe| %>
     <%= link_to recipe_path(recipe) do  %>
       <h2><%= recipe.name %></h2>
