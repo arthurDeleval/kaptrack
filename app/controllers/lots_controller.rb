@@ -6,26 +6,32 @@ class LotsController < ApplicationController
 
   def new
     @lot = Lot.new
-    @supplier = Supplier.new
-    @product = Product.new
   end
 
   def create
     @lot = Lot.new(lot_params)
-    @supplier = Supplier.new(supplier_params)
-    @lot.save
+    @product = Product.find(params[:lot][:product_id])
+    @supplier = Supplier.find(params[:lot][:supplier_id])
+    @lot.product = @product
+    @lot.supplier = @supplier
+    if @lot.save
+      redirect_to lots_path
+    else
+      render :new
+    end
   end
 
   def edit
     @lot = Lot.find(params[:id])
-    @supplier = Supplier.find(params[:id])
   end
 
   def update
     @lot = Lot.find(params[:id])
-    @supplier = Supplier.find(params[:id])
-    @lot.update(lot_params)
-    @supplier.update(supplier_params)
+    if @lot.update(lot_params)
+      redirect_to lots_path
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -1,11 +1,13 @@
 <h1>new supplier</h1>
 
-
+<div class="container">
 <%= simple_form_for(@supplier) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone_number %>
   <%= f.input :delivery_estimation %>
   <%= f.button :submit %>
-
 <% end %>
+</div>
+
+<% console %>
