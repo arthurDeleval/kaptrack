@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+<div class="container">
+  <%= simple_form_for @recipe do |f| %>
+    <%= f.input :name %>
+    <%= f.input :specificity %>
+    <%= f.input :recipe_description %>
+    <%= f.input :meal_description %>
+    <%= f.input :preparation_time %>
+    <%= f.input :price %>
+    <%= f.input :menu_visible %>
+    <div class="btn btn-primary">Add product</div>
+    <div class="products" data-products="<%=Product.all.to_json%>"></div>
+    <%= f.button :submit %>
+    <div class="container">
+  </div>
+  <% end %>
+=======
 
 <div class="container mt-5">
   <div class="row">
@@ -20,4 +37,5 @@
       </div>
     </div>
   </div>
+>>>>>>> e8a76813c90434878c3e75f9469896fb9097c175
 </div>
