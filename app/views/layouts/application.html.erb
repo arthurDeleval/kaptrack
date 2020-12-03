@@ -14,8 +14,9 @@
   <body>
     
     <%= render 'shared/flashes' %>
-
-    <%= yield %>
-    <%= render 'shared/sidebar' %>
+    <div class="d-flex">
+      <%= render 'shared/sidebar' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
