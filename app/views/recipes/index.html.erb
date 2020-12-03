@@ -1,17 +1,33 @@
-<div class="container">
-  <h1>All Recipes</h1>
+
+<div class="btn-container">
   <% if policy(Recipe).create? %>
-    <%= link_to "Add recipe", new_recipe_path %>
-  <% end %>
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe_path(recipe) do  %>
-      <h2><%= recipe.name %></h2>
-      <%= recipe.recipe_description %> ||
-      <p><%= recipe.price %>€ ||
-        <%= recipe.preparation_time %>(min) ||
-        <%= recipe.specificity %> ||
-        <%= recipe.meal_description %>
-      </p>
-    <% end %>
+    <div class="btn-index-checklists"><%= link_to "Add recipe", new_recipe_path, class: 'btn-main' %></div>
   <% end %>
 </div>
+<div class="container-grid">
+  <% @recipes.each do |recipe| %>
+    <div class="card-product">
+      <%= link_to recipe_path(recipe) do  %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <div class="card-product-container">
+            <div class="card-product-name">
+              <h2><%= recipe.name %></h2>
+            </div>
+          </div>
+          <%= recipe.recipe_description %> ||
+          <p><%= recipe.price %>€ ||
+          <%= recipe.preparation_time %>(min) ||
+          <%= recipe.specificity %> ||
+          <%= recipe.meal_description %>
+          </p>
+      <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+

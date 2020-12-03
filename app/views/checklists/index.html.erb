@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <div class="btn-container">
   <div class="btn-index-checklists">
     <% if policy(Checklist).create? %>
@@ -5,7 +7,9 @@
     <% end %>
   </div>
 </div>
+>>>>>>> e8a76813c90434878c3e75f9469896fb9097c175
 <div class="container">
+<%= link_to 'Add a checklist', new_checklist_path, class: 'btn btn-primary mt-2' %>
   <div class="cards-container">
     <% @checklists.each do |checklist| %>
       <div class="card-category-checklists">

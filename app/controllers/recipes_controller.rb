@@ -18,7 +18,15 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     authorize @recipe
     @recipe.user = current_user
-    if @recipe.save
+    @products = params[:products]
+    if @recipe.save!
+      @products.each do |product|
+        @product_recipe = ProductRecipe.new
+        @product_recipe.recipe_quantity = product[:quantity].to_i
+        @product_recipe.product_id = product[:product_id]
+        @product_recipe.recipe = @recipe
+        @product_recipe.save!
+      end
       redirect_to recipes_path
     else
       render :new
@@ -29,7 +37,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
   end
-  
+
   def update
     @recipe = Recipe.find(params[:id])
     authorize @recipe

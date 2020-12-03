@@ -1,16 +1,36 @@
-<div class="container">
-<%= link_to 'My recipes', recipes_path %> ||
-  <% if policy(@recipe).edit? %>
-    <%= link_to 'Update', edit_recipe_path %> ||
-  <% end %>
-  <% if policy(@recipe).destroy? %>
-    <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
-  <% end %>
-  <h1><%=@recipe.name%></h1>
-    <%= @recipe.recipe_description %> ||
-    <p><%= @recipe.price %>€ ||
+<div class="btn-container-show">
+  <div class="btn-show-recipe">
+    <%= link_to 'My recipes', recipes_path, class: 'btn-main' %>
+    <% if policy(@recipe).edit? %>
+      <%= link_to 'Edit', edit_recipe_path, class: 'btn-main' %>
+    <% end %>
+    <% if policy(@recipe).destroy? %>
+      <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card-container-show">
+  <div class="card-product-show">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <div class="card-product-container">
+      <div class="card-product-name">
+        <h1><%=@recipe.name%></h1>
+      </div>
+    </div>
+      <%= @recipe.recipe_description %> ||
+      <p><%= @recipe.price %>€ ||
       <%= @recipe.preparation_time %>(min) ||
-      <%= @recipe.specificity %> ||
+      <%= @recipe.specificity %> |
       <%= @recipe.meal_description %>
+  
+      <% @recipe.product_recipes.each do |product_recipe| %>
+        <%= product_recipe.product.name %>
+        <%= product_recipe.recipe_quantity %>
+        <%= product_recipe.product.measure_unit %>
+      <% end %>
     </p>
+  </div>
+  </div>
 </div>
