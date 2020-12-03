@@ -15,6 +15,14 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :phone_number,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "phone number" }%>
+    <%= f.input :role,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "role" }%>               
   </div>
 
   <div class="form-actions">

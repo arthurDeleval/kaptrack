@@ -3,15 +3,13 @@
     <div class="col-12 col-sm-8 col-md-4 offset-12 offset-sm-8 offset-md-4">
       <div class="container-new mb-5">
         <%= simple_form_for(@checklist, remote: true) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :deadline %>
-        <%= f.input :priority_level %>
-          <div class="container">
-              <%= f.button :submit, class: 'btn btn-primary' %>
-              <% end %>
-              <%= link_to 'Back to checklists', checklists_path, class: 'btn btn-primary mt-2' %>
-          </div>
+        <%= f.input :title, input_html: { class: "form-title" } %>
+        <%= f.input :description, input_html: { class: "form-description" } %>
+        <%= f.input :deadline, input_html: { class: "form-deadline" } %>
+        <%= f.input :priority_level, input_html: { class: "form-priority-level" } %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+        <%= link_to 'Back to checklists', checklists_path, class: 'btn btn-primary mt-2' %>
       </div>
     </div>
   </div>
