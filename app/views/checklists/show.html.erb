@@ -1,10 +1,14 @@
 <div class="container-show-checklist">
-  <%= link_to 'Back to index', checklists_path, class: 'btn-main' %>
-  <%= link_to 'Edit', edit_checklist_path, class: 'btn-main' %>
-  <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
+  <div class="btn-checklists-show-container">
+    <div class="btn-checklist-show">
+      <%= link_to 'Back to index', checklists_path, class: 'btn-main' %>
+      <%= link_to 'Edit', edit_checklist_path, class: 'btn-main' %>
+      <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
+    </div>
+  </div>
   <div class="show-checklist">
     <%= @checklist.title %>
-    <%= @checklist.description %>
+    <p><%= @checklist.description %></p>
     <%= @checklist.deadline %>
     <%= @checklist.priority_level %>
     <%= simple_form_for [@checklist, @task], remote: true do |f| %>
