@@ -59,7 +59,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
-  grid-gap: 50px;
+  grid-gap: 20px;
   flex-wrap: wrap;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -83,12 +83,18 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left : 60px;
+  margin-top: 50px;
 }
 
 .card-category-checklists-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card-category-checklists-title {
+  text-align: center;
 }
 
 .card-container {
@@ -113,6 +119,7 @@
   align-items: center;
   justify-self: center;
   margin-left : 60px;
+  margin-top: 50px;
 }
 
 .card-product img {
@@ -146,9 +153,47 @@
   justify-content: center;
 }
 
+.card-container-show {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
 
+.card-product-show {
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-left : 60px;
+  margin-top: 50px;
+  border-radius: 15px;
+}
 
+.card-product-show img {
+  height: 100%;
+  width: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+}
 
+.card-product-show h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-show p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
 
 
 
