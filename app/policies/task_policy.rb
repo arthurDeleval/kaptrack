@@ -1,12 +1,8 @@
-class RecipePolicy < ApplicationPolicy
+class TaskPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.all
     end
-  end
-
-  def show?
-    true
   end
 
   def create?
@@ -26,5 +22,4 @@ class RecipePolicy < ApplicationPolicy
   def destroy?
     user.role == "manager"
   end
-
 end

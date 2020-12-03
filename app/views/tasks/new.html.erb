@@ -1,4 +1,6 @@
-<%= simple_form_for [@checklist, @task], remote: true do |f| %>
-<%= f.input :description %>
-<%= f.button :submit, class: 'btn btn-primary' %>
+<% if policy(Task).create? %>
+  <%= simple_form_for [@checklist, @task], remote: true do |f| %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
 <% end %>

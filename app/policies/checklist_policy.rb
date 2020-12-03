@@ -1,7 +1,7 @@
-class RecipePolicy < ApplicationPolicy
+class ChecklistPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.all
     end
   end
 
@@ -26,5 +26,4 @@ class RecipePolicy < ApplicationPolicy
   def destroy?
     user.role == "manager"
   end
-
 end

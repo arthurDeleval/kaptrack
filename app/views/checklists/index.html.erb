@@ -1,5 +1,9 @@
 <div class="btn-container">
-  <div class="btn-index-checklists"><%= link_to 'Add a checklist', new_checklist_path, class: 'btn-main' %></div>
+  <div class="btn-index-checklists">
+    <% if policy(Checklist).create? %>
+      <%= link_to 'Add a checklist', new_checklist_path, class: 'btn-main' %>
+    <% end %>
+  </div>
 </div>
 <div class="container">
   <div class="cards-container">

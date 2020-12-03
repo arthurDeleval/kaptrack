@@ -3,7 +3,9 @@
   <% if policy(@recipe).edit? %>
     <%= link_to 'Update', edit_recipe_path %> ||
   <% end %>
-  <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
+  <% if policy(@recipe).destroy? %>
+    <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
   <h1><%=@recipe.name%></h1>
     <%= @recipe.recipe_description %> ||
     <p><%= @recipe.price %>€ ||

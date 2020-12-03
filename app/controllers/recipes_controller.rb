@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def new
@@ -26,10 +27,12 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
   
   def update
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
     if @recipe.update(recipe_params)
       redirect_to @recipe
     else
@@ -39,6 +42,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
     @recipe.destroy
     redirect_to recipes_path
   end

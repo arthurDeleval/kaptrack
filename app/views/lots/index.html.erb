@@ -1,44 +1,51 @@
-<h1>lots index</h1>
-
-<% @lots.each do |lot| %>
-<div class="row">
-  <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <div class="title">
-          <h2><%= lot.product.name %></h2>
+<div class="container">
+  <h1>All stocks in the restaurant</h1>
+  <% @lots.each do |lot| %>
+  <div class="row">
+    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <div class="title">
+            <h2><%= lot.product.name %></h2>
+          </div>
+          <div class="container-1">
+          <div class="container-2">
+            <p><%= lot.expiration_date %></p>
+            <p><%= lot.quantity%></p>
+          </div>
+          <div class="container-2">
+            <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
+            <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
+          </div>
+          <div class="container-supplier">
+            <p><strong><%= lot.supplier.name %></strong></p>
+          </div>
+          <div class="container-address">
+            <p><i class="fas fa-map-marked-alt"></i><%= lot.supplier.address %></p>
+          </div>
+          <div class="container-2">
+            <p><i class="fas fa-phone-alt"></i><%= lot.supplier.phone_number %></p>
+            <p><i class="fas fa-truck-loading"></i><%= lot.supplier.delivery_estimation %></p>
+          </div>
         </div>
-        <div class="container-1">
-        <div class="container-2">
-          <p><%= lot.expiration_date %></p>
-          <p><%= lot.quantity%></p>
-        </div>
-        <div class="container-2">
-          <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
-          <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
-        </div>
-        <div class="container-supplier">
-          <p><strong><%= lot.supplier.name %></strong></p>
-        </div>
-        <div class="container-address">
-          <p><i class="fas fa-map-marked-alt"></i><%= lot.supplier.address %></p>
-        </div>
-        <div class="container-2">
-          <p><i class="fas fa-phone-alt"></i><%= lot.supplier.phone_number %></p>
-          <p><i class="fas fa-truck-loading"></i><%= lot.supplier.delivery_estimation %></p>
-        </div>
+      </div>
+      </div>
       </div>
     </div>
     </div>
-    </div>
-  </div>
-  </div>
-<% end %>
+  <% end %>
+</div> 
 
 <div class="container">
-<%= link_to "add a product", new_product_path %>
-<%= link_to "add a supplier", new_supplier_path %>
-<%= link_to "add a stock", new_lot_path %>
+  <% if policy(Product).create? %>
+    <%= link_to "add a product", new_product_path %>
+  <% end %>
+  <% if policy(Supplier).create? %>
+    <%= link_to "add a supplier", new_supplier_path %>
+  <% end %>
+  <% if policy(Lot).create? %>
+    <%= link_to "add a stock", new_lot_path %>
+  <% end %>
 </div>
 

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :chatrooms
   has_many :plannings
   validates :email, presence: true
-  # validates :phone_number, presence: true
+  validates :phone_number, presence: true
   # validates :role, presence: true
 
   # Include default devise modules. Others available are:
