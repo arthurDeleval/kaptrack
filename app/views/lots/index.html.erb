@@ -1,42 +1,47 @@
-<div class="grid-stock">
-  <% @lots.each do |lot| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <div class="title">
-          <h2><%= lot.product.name %></h2>
-        </div>
-        <div class="container-1">
-          <div class="container-2">
-            <p><%= lot.expiration_date %></p>
-            <p><%= lot.quantity%></p>
+<div class="d-flex flex-column">
+  <div class="grid-stock">
+    <% @lots.each do |lot| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <div class="title">
+            <h2><%= lot.product.name %></h2>
           </div>
-          <div class="container-2">
-            <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
-            <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
-          </div>
-          <div class="container-supplier">
-            <p><strong><%= lot.supplier.name %></strong></p>
-          </div>
-          <div class="container-address">
-            <p><i class="fas fa-map-marked-alt"></i><%= lot.supplier.address %></p>
-          </div>
-          <div class="container-2">
-            <p><i class="fas fa-phone-alt"></i><%= lot.supplier.phone_number %></p>
-            <p><i class="fas fa-truck-loading"></i><%= lot.supplier.delivery_estimation %></p>
+          <div class="container-1">
+            <div class="container-2">
+              <p><%= lot.expiration_date %></p>
+              <p><%= lot.quantity%></p>
+            </div>
+            <div class="container-2">
+              <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
+              <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
+            </div>
+            <div class="container-supplier">
+              <p><strong><%= lot.supplier.name %></strong></p>
+            </div>
+            <div class="container-address">
+              <p><i class="fas fa-map-marked-alt"></i><%= lot.supplier.address %></p>
+            </div>
+            <div class="container-2">
+              <p><i class="fas fa-phone-alt"></i><%= lot.supplier.phone_number %></p>
+              <p><i class="fas fa-truck-loading"></i><%= lot.supplier.delivery_estimation %></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="container-2">
-        <%= link_to 'Edit', edit_lot_path(lot.id), class: 'btn btn-primary mt-2' %>
-        <%= link_to 'Delete', lots_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <% if policy(Product).create? %>
+      <%= link_to "add a product", new_product_path %>
+    <% end %>
+    <% if policy(Supplier).create? %>
+      <%= link_to "add a supplier", new_supplier_path %>
+    <% end %>
+    <% if policy(Lot).create? %>
+      <%= link_to "add a stock", new_lot_path %>
+    <% end %>
+  </div>
 </div>
-  <%= link_to "add a product", new_product_path %>
-  <%= link_to "add a supplier", new_supplier_path %>
-  <%= link_to "add a stock", new_lot_path %>
-
-
 

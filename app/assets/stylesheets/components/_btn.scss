@@ -17,6 +17,19 @@
   right: 0;
 }
 
+.btn-checklists-show-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-checklist-show {
+  margin-top: 50px;
+  margin-right: 20px;
+  position: fixed;
+  right: 0;
+}
+  
 .btn-container-show {
   display: flex;
   align-items: right;
@@ -27,7 +40,6 @@
   margin: 20px;
   position: fixed;
   right: 0;
-
 }
 
 .btn-show {
@@ -36,5 +48,3 @@
   background-color: #0B88EE;
   color: white;
 }
-
-

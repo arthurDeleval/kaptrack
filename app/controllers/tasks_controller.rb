@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @tasks = policy_scope(Task).order(created_at: :desc)
   end
 
   def create
@@ -10,7 +11,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.checklist = @checklist
     @task.save
-
+    authorize @task
     if @task.save
       redirect_to checklist_path(params[:checklist_id])
     else
@@ -20,10 +21,12 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    authorize @task
   end
 
   def update
     @task = Task.find(params[:id])
+    authorize @task
     if @task.update(task_params)
       redirect_to checklist_path(params[:checklist_id])
     else

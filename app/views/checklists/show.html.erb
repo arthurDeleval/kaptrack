@@ -1,10 +1,14 @@
 <div class="container-show-checklist">
-  <%= link_to 'Back to index', checklists_path, class: 'btn-main' %>
-  <%= link_to 'Edit', edit_checklist_path, class: 'btn-main' %>
-  <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
+  <div class="btn-checklists-show-container">
+    <div class="btn-checklist-show">
+      <%= link_to 'Back to index', checklists_path, class: 'btn-main' %>
+      <%= link_to 'Edit', edit_checklist_path, class: 'btn-main' %>
+      <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
+    </div>
+  </div>
   <div class="show-checklist">
     <%= @checklist.title %>
-    <%= @checklist.description %>
+    <p><%= @checklist.description %></p>
     <%= @checklist.deadline %>
     <%= @checklist.priority_level %>
     <%= simple_form_for [@checklist, @task], remote: true do |f| %>
@@ -18,9 +22,31 @@
         <div class="task">
           <%= task.description %>
           <%#= f.label :validation %>
-          <%#= f.check_box :validation, class: 'btn btn-checked'%>
+          <%#=f.check_box :validation, class: 'btn btn-checked'%>
         </div>
       <% end %>
     </div>
   </div>
+  <%= link_to 'Back to checklists', checklists_path, class: 'btn btn-primary mt-2' %>
+  <% if policy(Checklist).edit? %>
+    <%= link_to 'Edit', edit_checklist_path, class: 'btn btn-primary mt-2' %>
+  <% end %>
+  <% if policy(Checklist).destroy? %>
+    <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Are you sure ?"} %>
+  <% end %>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@checklist, @task], remote: true do |f| %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <% @checklist.tasks.each do |task| %>
+    <%= task.description %>
+    <%= f.label :validation %>
+    <%= f.check_box :validation, class: 'btn btn-checked'%>
+  <% end %>
+  <% end %>
 </div>
