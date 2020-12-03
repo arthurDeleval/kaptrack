@@ -1,7 +1,9 @@
-<div class="btn-container">
-  <div class="btn-index-checklists"><%= link_to "Add recipe", new_recipe_path, class: 'btn-main' %></div>
-</div>
 
+<div class="btn-container">
+  <% if policy(Recipe).create? %>
+    <div class="btn-index-checklists"><%= link_to "Add recipe", new_recipe_path, class: 'btn-main' %></div>
+  <% end %>
+</div>
 <div class="container-grid">
   <% @recipes.each do |recipe| %>
     <div class="card-product">

@@ -1,30 +1,43 @@
 class SuppliersController < ApplicationController
 
   def index
-    @suppliers = Supplier.all
+    @suppliers = policy_scope(Supplier).order(created_at: :desc)
   end
 
   def new
     @supplier = Supplier.new
+    authorize @supplier
   end
 
   def create
     @supplier = Supplier.new(supplier_params)
-    @supplier.save
+    authorize @supplier
+    if @supplier.save
+      redirect_to suppliers_path
+    else
+      render :new
+    end
   end
 
   def edit
     @supplier = Supplier.find(params[:id])
+    authorize @supplier
   end
 
   def update
     @supplier = Supplier.find(params[:id])
-    @supplier.update(supplier_params)
+    authorize @supplier
+    if @supplier.update(supplier_params)
+      redirect_to suppliers_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @supplier = Supplier.find(params[:id])
-    @supplier.destroys
+    authorize @supplier
+    @supplier.destroy
   end
 
   private
