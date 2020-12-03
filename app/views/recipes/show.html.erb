@@ -8,5 +8,12 @@
       <%= @recipe.preparation_time %>(min) ||
       <%= @recipe.specificity %> ||
       <%= @recipe.meal_description %>
+      <% @recipe.product_recipes.each do |product_recipe| %>
+        <%= product_recipe.product.name %>
+        <%= product_recipe.recipe_quantity %>
+        <%= product_recipe.product.measure_unit %>
+      <% end %>
     </p>
 </div>
+
+<% console %>

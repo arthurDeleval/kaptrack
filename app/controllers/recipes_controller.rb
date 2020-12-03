@@ -14,7 +14,15 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
-    if @recipe.save
+    @products = params[:products]
+    if @recipe.save!
+      @products.each do |product|
+        @product_recipe = ProductRecipe.new
+        @product_recipe.recipe_quantity = product[:quantity].to_i
+        @product_recipe.product_id = product[:product_id]
+        @product_recipe.recipe = @recipe
+        @product_recipe.save!
+      end
       redirect_to recipes_path
     else
       render :new
@@ -24,7 +32,7 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
   end
-  
+
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
