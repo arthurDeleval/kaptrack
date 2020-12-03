@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="row">
-    <% @lots.each do |lot| %>
-    <div class="col">
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <div class="title">
-            <h2><%= lot.product.name %></h2>
-          </div>
-          <div class="container-1">
+<div class="grid-stock">
+  <% @lots.each do |lot| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <div class="title">
+          <h2><%= lot.product.name %></h2>
+        </div>
+        <div class="container-1">
           <div class="container-2">
             <p><%= lot.expiration_date %></p>
             <p><%= lot.quantity%></p>
@@ -29,17 +27,16 @@
           </div>
         </div>
       </div>
-        <div class="container-2">
-          <%= link_to 'Edit', edit_lot_path(lot.id), class: 'btn btn-primary mt-2' %>
-          <%= link_to 'Delete', lots_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
-        </div>
-      </div>
+      <div class="container-2">
+        <%= link_to 'Edit', edit_lot_path(lot.id), class: 'btn btn-primary mt-2' %>
+        <%= link_to 'Delete', lots_path, method: :delete, data: { confirm: "Etes vous certain?"} %>
       </div>
     </div>
   <% end %>
+</div>
   <%= link_to "add a product", new_product_path %>
   <%= link_to "add a supplier", new_supplier_path %>
   <%= link_to "add a stock", new_lot_path %>
-</div>
+
 
 
