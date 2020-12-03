@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   resources :recipes
   resources :checklists do
     resources :tasks, only: [:index, :edit, :update, :create]
+    end
   resources :menu, only: [ :index ]
   resources :products
   resources :suppliers
 
-end
 end
