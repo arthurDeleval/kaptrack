@@ -52,5 +52,14 @@ label {
 
 .show-checklist {
   padding: 30px;
-
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-bottom: 15px;
+    h3 {
+      text-align: center;
+      border-bottom: 1px solid #DCDCDD;
+    }
+      p {
+        text-align: center;
+      }
 }
