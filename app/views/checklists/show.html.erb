@@ -19,10 +19,10 @@
 </div>
 
   <div class="show-checklist">
-    <h3><strong>Title:</strong> <%= @checklist.title %></h3>
-    <p><strong>Description:</strong> <%= @checklist.description %></p>
-    <p><strong>Deadline:</strong> <%= @checklist.deadline %></p>
-    <p><strong>Priority level:</strong> <%= @checklist.priority_level %>/3</p>
+    <h3><i class="fas fa-tasks"></i> <%= @checklist.title %></h3>
+    <p><i class="fas fa-chalkboard-teacher"></i> <%= @checklist.description %></p>
+    <p><i class="far fa-calendar-check"></i> <%= @checklist.deadline %></p>
+    <p><i class="fas fa-hourglass-start"></i> <%= @checklist.priority_level %>/3</p>
     <% if policy(Task).edit? %>
       <%= simple_form_for [@checklist, @task], remote: true do |f| %>
         <%= f.input :description %>
