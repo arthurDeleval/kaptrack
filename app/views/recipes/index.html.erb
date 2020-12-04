@@ -1,4 +1,3 @@
-
 <div class="btn-container">
   <% if policy(Recipe).create? %>
     <div class="btn-index-checklists"><%= link_to "Add recipe", new_recipe_path, class: 'btn-main' %></div>
@@ -16,13 +15,16 @@
             </div>
           </div>
           <div class="card-product-recipes-container">
-            <div><i class="far fa-clock"></i><%= recipe.preparation_time %></div>
           </div>
           <div class="card-product-recipes-container">
             <div><%= recipe.meal_description %></div>
             <div><%= recipe.specificity %></div>
           </div>
-          <p><%= recipe.price %>€
+          <div class="card-product-recipes-container">
+            <div><p><%= recipe.price %>€</div>
+            <div><p><i class="far fa-clock"></i><%= recipe.preparation_time %></div>
+          </div>
+          </p>
           </p>
       <% end %>
         </div>
