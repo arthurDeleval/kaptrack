@@ -11,15 +11,19 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
           <div class="card-product-container">
-            <div class="card-product-name">
+            <div class="card-product-name pb-1">
               <h2><%= recipe.name %></h2>
             </div>
           </div>
-          <%= recipe.recipe_description %> ||
-          <p><%= recipe.price %>€ ||
-          <%= recipe.preparation_time %>(min) ||
-          <%= recipe.specificity %> ||
-          <%= recipe.meal_description %>
+          <div class="card-product-recipes-container">
+            <div><%= recipe.recipe_description %></div>
+            <div><%= recipe.preparation_time %>(min)</div>
+          </div>
+          <div class="card-product-recipes-container">
+            <div><%= recipe.meal_description %></div>
+            <div><%= recipe.specificity %></div>
+          </div>
+          <p><%= recipe.price %>€
           </p>
       <% end %>
         </div>
