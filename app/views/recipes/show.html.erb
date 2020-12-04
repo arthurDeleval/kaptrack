@@ -5,7 +5,7 @@
       <%= link_to 'Edit', edit_recipe_path, class: 'btn-main' %>
     <% end %>
     <% if policy(@recipe).destroy? %>
-      <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
+      <%= link_to 'Delete', recipe_path, class: 'btn-main', method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
   </div>
 </div>
@@ -22,7 +22,7 @@
         </div>
 
       </div>
-      <div class="scrollable">
+      <div class="scrollable" style="height: 400px; overflow: scroll;">
         <div class="mb-3">
           <h2>Recipe decription</h2>
           <%= @recipe.recipe_description %>
