@@ -36,13 +36,13 @@
   <div class="btn-container-show">
     <div class="btn-lots-index">
       <% if policy(Product).create? %>
-        <%= link_to "add a product", new_product_path, class: 'btn-show' %>
+        <%= link_to "add a product", new_product_path, class: 'btn-main' %>
       <% end %>
       <% if policy(Supplier).create? %>
-        <%= link_to "add a supplier", new_supplier_path, class: 'btn-show' %>
+        <%= link_to "add a supplier", new_supplier_path, class: 'btn-main' %>
       <% end %>
       <% if policy(Lot).create? %>
-        <%= link_to "add a stock", new_lot_path, class: 'btn-show' %>
+        <%= link_to "add a stock", new_lot_path, class: 'btn-main' %>
       <% end %>
     </div>
   </div>
