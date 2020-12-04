@@ -2,7 +2,8 @@
   <div class="btn-show-recipe">
     <%= link_to 'My recipes', recipes_path, class: 'btn-main' %>
     <% if policy(@recipe).edit? %>
-      <%= link_to 'Edit', edit_recipe_path, class: 'btn-main' %>
+      <%= link_to edit_recipe_path do %>
+      <% end %>
     <% end %>
     <% if policy(@recipe).destroy? %>
       <%= link_to recipe_path, method: :delete, data: { confirm: "Are you sure?"} do %>
