@@ -37,6 +37,7 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 30px;
+  background-color: white;
 }
 
 .card-product-infos-1 {
@@ -51,16 +52,29 @@
   display:flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 5px;
+    p {
+      color: #6cb4e4
+;
+    }
 }
 
 .container-supplier{
   display: flex;
   justify-content: center;
+    p {
+      color: #6cb4e4
+;
+    }
 }
 
 .container-address{
   display:flex;
   justify-content: center;
+    p {
+      color: #6cb4e4
+;
+    }
 }
 
 .cards-container {

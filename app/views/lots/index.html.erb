@@ -15,24 +15,23 @@
               <p>Quantity: <%= lot.quantity%></p>
             </div>
             <div class="container-2">
-              <p><i class="fas fa-dollar-sign"></i><%= lot.cost %></p>
+              <p><i class="fas fa-dollar-sign"></i> <%= lot.cost %></p>
             </div>
             <div class="container-supplier">
               <p>Supplier: <strong><%= lot.supplier.name %></strong></p>
             </div>
             <div class="container-address">
-              <p><i class="fas fa-map-marked-alt"></i><%= lot.supplier.address %></p>
+              <p><i class="fas fa-map-marked-alt"></i> <%= lot.supplier.address %></p>
             </div>
             <div class="container-2">
-              <p><i class="fas fa-phone-alt"></i><%= lot.supplier.phone_number %></p>
-              <p><i class="fas fa-truck-loading"></i><%= lot.supplier.delivery_estimation %> days</p>
+              <p><i class="fas fa-phone-alt"></i> <%= lot.supplier.phone_number %></p>
+              <p><i class="fas fa-truck-loading"></i> <%= lot.supplier.delivery_estimation %> days</p>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
   <div class="btn-container-show">
     <div class="btn-lots-index">
       <% if policy(Product).create? %>
