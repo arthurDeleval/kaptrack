@@ -1,11 +1,12 @@
 class LotsController < ApplicationController
 
   def index
-    @lots = Lot.all
+    @lots = policy_scope(Lot).order(created_at: :desc)
   end
 
   def new
     @lot = Lot.new
+    authorize @lot
   end
 
   def create
@@ -14,6 +15,7 @@ class LotsController < ApplicationController
     @supplier = Supplier.find(params[:lot][:supplier_id])
     @lot.product = @product
     @lot.supplier = @supplier
+    authorize @lot
     if @lot.save
       redirect_to lots_path
     else
@@ -23,10 +25,12 @@ class LotsController < ApplicationController
 
   def edit
     @lot = Lot.find(params[:id])
+    authorize @lot
   end
 
   def update
     @lot = Lot.find(params[:id])
+    authorize @lot
     if @lot.update(lot_params)
       redirect_to lots_path
     else
@@ -36,6 +40,7 @@ class LotsController < ApplicationController
 
   def destroy
     @lot = Lot.find(params[:id])
+    authorize @lot
     @lot.destroy
   end
 

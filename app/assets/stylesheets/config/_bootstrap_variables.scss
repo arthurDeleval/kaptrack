@@ -23,3 +23,7 @@ $border-radius-lg: 15px;
 $border-radius-sm: 15px;
 
 // Override other variables below!
+
+a {
+  text-decoration: none !important;
+}
