@@ -2,6 +2,9 @@ class LotsController < ApplicationController
 
   def index
     @lots = policy_scope(Lot).order(created_at: :desc)
+    # if params[:query].present?
+    #   @lots = Lot.global_search(params[:query])
+    # end
   end
 
   def new
