@@ -3,6 +3,7 @@ class ChecklistsController < ApplicationController
 
   def index
     @checklists = policy_scope(Checklist).order(created_at: :desc)
+    @checklists = Checklist.global_search(params[:query]) if params[:query].present?
   end
 
   def show

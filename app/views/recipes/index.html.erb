@@ -1,4 +1,12 @@
-<div class="btn-container">
+<div class="header-recipe">
+  <%= form_tag recipes_path, method: :get, class: "d-flex ml-4" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a specific recipe ..."
+    %>
+    <%= submit_tag "Search", class: "btn-search" %>
+  <% end %>
   <% if policy(Recipe).create? %>
     <div class="btn-index-checklists"><%= link_to "Add recipe", new_recipe_path, class: 'btn-main' %></div>
   <% end %>
