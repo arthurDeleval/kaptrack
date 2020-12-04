@@ -3,7 +3,7 @@
     <% @lots.each do |lot| %>
     <div class="col">
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= cl_image_tag lot.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-product-infos">
           <div class="title">
             <h2><%= lot.product.name %></h2>

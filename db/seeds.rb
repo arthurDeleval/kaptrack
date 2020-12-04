@@ -13,7 +13,7 @@ Lot.destroy_all
 require 'faker'
 
 puts 'Creating fake data ...'
-10.times do
+100.times do
   supplier = Supplier.new(
     name:    Faker::Company.name,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
@@ -23,7 +23,7 @@ puts 'Creating fake data ...'
   supplier.save!
 end
 
-10.times do
+100.times do
   product = Product.new(
     name:    Faker::Food.ingredient,
     measure_unit: Faker::Food.measurement,
