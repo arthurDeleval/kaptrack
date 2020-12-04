@@ -5,7 +5,7 @@
       <%= link_to 'Edit', edit_recipe_path, class: 'btn-main' %>
     <% end %>
     <% if policy(@recipe).destroy? %>
-      <%= link_to 'Delete', recipe_path, method: :delete, data: { confirm: "Are you sure?"} %>
+      <%= link_to 'Delete', recipe_path, class: 'btn-main', method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
   </div>
 </div>
@@ -20,19 +20,31 @@
         <div class="card-product-name">
           <h1><%=@recipe.name%></h1>
         </div>
-      </div>
-        <%= @recipe.recipe_description %> ||
-        <p><%= @recipe.price %>€ ||
-        <%= @recipe.preparation_time %>(min) ||
-        <%= @recipe.specificity %> |
-        <%= @recipe.meal_description %>
 
-        <% @recipe.product_recipes.each do |product_recipe| %>
-          <%= product_recipe.product.name %>
-          <%= product_recipe.recipe_quantity %>
-          <%= product_recipe.product.measure_unit %>
-        <% end %>
-      </p>
+      </div>
+      <div class="scrollable" style="height: 400px; overflow: scroll;">
+        <div class="mb-3">
+          <h2>Recipe decription</h2>
+          <%= @recipe.recipe_description %>
+
+          <p><%= @recipe.price %>€ ||
+          <%= @recipe.preparation_time %>(min) ||
+          <%= @recipe.specificity %>
+          </p>
+        </div>
+        <div>
+          <h2>Meal description</h2>
+          <%= @recipe.meal_description %>
+        </div>
+        <div>
+          <h2>Ingredients</h2>
+          <% @recipe.product_recipes.each do |product_recipe| %>
+            <%= product_recipe.product.name %>
+            <%= product_recipe.recipe_quantity %>
+            <%= product_recipe.product.measure_unit %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
