@@ -4,7 +4,7 @@ class Lot < ApplicationRecord
   validates :cost, presence: true
   validates :quantity, presence: true
   validates :expiration_date, presence: true
-
+  
   # CODE POUR AJOUTER UNE SEARCH BAR SUR L'INDEX DES STOCKS
   # include PgSearch::Model
   # pg_search_scope :global_search,
@@ -18,4 +18,7 @@ class Lot < ApplicationRecord
   # using: {
   #   tsearch: { prefix: true }
   # }
+  
+  has_one_attached :photo
+  
 end

@@ -2,7 +2,9 @@
   <div class="grid-stock">
     <% @lots.each do |lot| %>
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if lot.photo.attached? %>
+        <%= cl_image_tag lot.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <div class="card-product-infos">
           <div class="title">
             <h2><%= lot.product.name %></h2>

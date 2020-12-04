@@ -4,7 +4,6 @@ const displayRecipeProductLine = () => {
   const productsElement = document.querySelector(".products");
   const products = JSON.parse(productsElement.dataset.products);
   const option = products.map(product => `<option value="${product.id}">${product.name}</option>`).join()
-  console.log(option)
 
   addBtn.addEventListener("click", (event) => {
     const HTML = `
