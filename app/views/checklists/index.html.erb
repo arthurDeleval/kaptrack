@@ -1,9 +1,15 @@
-<div class="btn-container">
-  <div class="btn-index-checklists">
-    <% if policy(Checklist).create? %>
-      <%= link_to 'Add a checklist', new_checklist_path, class: 'btn-main' %>
-    <% end %>
-  </div>
+<div class="header-checklist">
+  <%= form_tag checklists_path, method: :get, class: "d-flex ml-4" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a specific checklist ..."
+    %>
+    <%= submit_tag "Search", class: "btn-search" %>
+  <% end %>
+  <% if policy(Checklist).create? %>
+    <div class="btn-index-checklists"><%= link_to "New checklist", new_checklist_path, class: 'btn-main' %></div>
+  <% end %>
 </div>
 <div class="container">
   <div class="cards-container">

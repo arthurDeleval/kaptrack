@@ -8,5 +8,14 @@ class Recipe < ApplicationRecord
   validates :price, presence: true
   validates :preparation_time, presence: true
   validates :meal_description, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+  against: [[:name, 'A' ], [:meal_description, 'B' ], [:recipe_description, 'C' ], [:menu_visible, 'C' ]],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   has_one_attached :photo
+
 end
