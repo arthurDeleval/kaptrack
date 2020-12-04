@@ -15,9 +15,11 @@
     <p><%= @checklist.description %></p>
     <%= @checklist.deadline %>
     <%= @checklist.priority_level %>
-    <%= simple_form_for [@checklist, @task], remote: true do |f| %>
-      <%= f.input :description %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% if policy(Task).edit? %>
+      <%= simple_form_for [@checklist, @task], remote: true do |f| %>
+        <%= f.input :description %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
   </div>
   <div class="container">
