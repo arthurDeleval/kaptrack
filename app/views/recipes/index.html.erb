@@ -8,7 +8,9 @@
   <% @recipes.each do |recipe| %>
     <div class="card-product">
       <%= link_to recipe_path(recipe) do  %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if recipe.photo.attached? %>
+        <%= cl_image_tag recipe.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <div class="card-product-infos">
           <div class="card-product-container">
             <div class="card-product-name pb-1">
