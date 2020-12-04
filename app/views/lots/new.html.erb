@@ -1,11 +1,12 @@
 <div class="container">
-  <h1>Add a stock</h1>
+  <h1>Create a new stock</h1>
   <%= simple_form_for(@lot) do |f| %>
     <%= f.association :product %>
     <%= f.association :supplier %>
     <%= f.input :expiration_date %>
     <%= f.input :cost %>
     <%= f.input :quantity %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit %>
   <% end %>
 </div>

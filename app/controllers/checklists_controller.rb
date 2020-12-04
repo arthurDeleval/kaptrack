@@ -49,6 +49,6 @@ class ChecklistsController < ApplicationController
   end
 
   def checklist_params
-    params.require(:checklist).permit(:title, :description, :deadline, :priority_level)
+    params.require(:checklist).permit(:title, :description, :deadline, :priority_level, :photo)
   end
 end

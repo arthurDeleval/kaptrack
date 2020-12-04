@@ -47,7 +47,7 @@ class LotsController < ApplicationController
   private
 
   def lot_params
-    params.require(:lot).permit(:expiration_date, :cost, :quantity)
+    params.require(:lot).permit(:expiration_date, :cost, :quantity, :photo)
   end
 
   def supplier_params

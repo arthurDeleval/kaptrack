@@ -8,5 +8,5 @@ class Recipe < ApplicationRecord
   validates :price, presence: true
   validates :preparation_time, presence: true
   validates :meal_description, presence: true
-
+  has_one_attached :photo
 end

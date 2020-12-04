@@ -4,4 +4,5 @@ class Lot < ApplicationRecord
   validates :cost, presence: true
   validates :quantity, presence: true
   validates :expiration_date, presence: true
+  has_one_attached :photo
 end

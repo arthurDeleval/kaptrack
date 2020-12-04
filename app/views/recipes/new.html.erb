@@ -8,15 +8,17 @@
           <%= f.input :recipe_description, input_html: { class: "form-recipes-description" } %>
           <%= f.input :meal_description, input_html: { class: "form-meal-description" } %>
           <%= f.input :preparation_time, input_html: { class: "form-recipes-preparation-time" } %>
+          <div class="btn btn-primary">Add product</div>
+          <div class="products" data-products="<%=Product.all.to_json%>"></div>
           <%= f.input :price, input_html: { class: "form-recipes-price" } %>
           <%= f.input :menu_visible, input_html: { class: "form-menu-visible" } %>
-          <div class="btn btn-primary">Add product</div>
-            <div class="products" data-products="<%=Product.all.to_json%>"></div>
-              <div class="btn-container">
-                <div class="btn-recipes-index">
-                  <%= f.button :submit, {class: 'btn-main'} %>
-                </div>
-              </div>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit %>
+          <div class="btn-container">
+            <div class="btn-recipes-index">
+              <%= f.button :submit, {class: 'btn-main'} %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

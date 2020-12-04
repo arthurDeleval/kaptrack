@@ -12,7 +12,7 @@
 
 <div class="card-container-show">
   <div class="card-product-show">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-product-infos">
     <div class="card-product-container">
       <div class="card-product-name">
@@ -24,7 +24,7 @@
       <%= @recipe.preparation_time %>(min) ||
       <%= @recipe.specificity %> |
       <%= @recipe.meal_description %>
-  
+
       <% @recipe.product_recipes.each do |product_recipe| %>
         <%= product_recipe.product.name %>
         <%= product_recipe.recipe_quantity %>
