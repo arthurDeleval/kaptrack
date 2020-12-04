@@ -1,6 +1,6 @@
 .title {
   color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  border: 1px solid #587DCA;
   padding: 8px 24px;
   border-radius: 5px;
   font-weight: lighter;
@@ -9,9 +9,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
 }
 
 .title-new {
   color: blue;
   width: 300px;
+}
+
+.title h2 {
+  color: #587DCA;
+
+}
+
+.title a {
+  color: #F4F4F4;
 }
