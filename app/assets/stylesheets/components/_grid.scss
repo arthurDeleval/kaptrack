@@ -1,5 +1,8 @@
 .grid-stock {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+  grid-gap: 40px;
+  width: 100%;
+  margin: 0 auto;
+
 }
