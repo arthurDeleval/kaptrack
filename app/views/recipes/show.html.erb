@@ -1,14 +1,23 @@
-<div class="btn-container-show">
-  <div class="btn-show-recipe">
-    <%= link_to 'My recipes', recipes_path, class: 'btn-main' %>
+<div class="header-recipe ml-3 mr-3">
+  <div>
+    <%= link_to recipes_path, class:'btn-icons' do %>
+      <i class="fas fa-long-arrow-alt-left"></i>
+    <% end %>
+  </div>
+  <div class="p-2">
     <% if policy(@recipe).edit? %>
-      <%= link_to 'Edit', edit_recipe_path, class: 'btn-main' %>
+      <%= link_to edit_recipe_path, class:'btn-icons' do %>
+        <i class="far fa-edit"></i>
+      <% end %>
     <% end %>
     <% if policy(@recipe).destroy? %>
-      <%= link_to 'Delete', recipe_path, class: 'btn-main', method: :delete, data: { confirm: "Are you sure?"} %>
+      <%= link_to recipe_path, method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
     <% end %>
   </div>
 </div>
+
 
 <div class="card-container-show">
   <div class="card-product-show">

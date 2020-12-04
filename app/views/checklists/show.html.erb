@@ -1,20 +1,28 @@
-<div class="container-show-checklist">
-  <div class="btn-checklists-show-container">
-    <div class="btn-checklist-show">
-      <%= link_to 'Back to checklists', checklists_path, class: 'btn btn-primary mt-2' %>
-      <% if policy(Checklist).edit? %>
-        <%= link_to 'Edit', edit_checklist_path, class: 'btn btn-primary mt-2' %>
-      <% end %>
-      <% if policy(Checklist).destroy? %>
-        <%= link_to 'Delete', checklist_path, method: :delete, data: { confirm: "Are you sure ?"} %>
-      <% end %>
-    </div>
+<div class="header-recipe ml-3 mr-3">
+  <div>
+    <%= link_to checklists_path, class:'btn-icons' do %>
+      <i class="fas fa-long-arrow-alt-left"></i>
+    <% end %>
   </div>
+  <div class="p-2">
+    <% if policy(Checklist).edit? %>
+      <%= link_to edit_checklist_path, class:'btn-icons' do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    <% end %>
+    <% if policy(Checklist).destroy? %>
+      <%= link_to checklist_path, class:'btn-icons', method: :delete, data: { confirm: "Are you sure ?"} do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
   <div class="show-checklist">
-    <%= @checklist.title %>
-    <p><%= @checklist.description %></p>
-    <%= @checklist.deadline %>
-    <%= @checklist.priority_level %>
+    <h3><strong>Title:</strong> <%= @checklist.title %></h3>
+    <p><strong>Description:</strong> <%= @checklist.description %></p>
+    <p><strong>Deadline:</strong> <%= @checklist.deadline %></p>
+    <p><strong>Priority level:</strong> <%= @checklist.priority_level %>/3</p>
     <% if policy(Task).edit? %>
       <%= simple_form_for [@checklist, @task], remote: true do |f| %>
         <%= f.input :description %>
