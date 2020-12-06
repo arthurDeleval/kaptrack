@@ -1,12 +1,17 @@
 .task-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
 }
 
 .task {
   border: 1px solid #FFFFFF;
   padding: 8px;
-  border-radius: 14px 14px 0px 0px;
   background-color: white;
-  border: 1px solid #DBDBDA;
+  border: 1px solid #F8C3A7;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
+

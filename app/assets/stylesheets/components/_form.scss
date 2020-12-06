@@ -44,22 +44,12 @@ label {
   height: 100px;
 }
 
-
-.container-show-checklist {
-  width: 100%;
-  margin: 0 auto;
+.form-control {
+  border-radius: 4px;
 }
 
-.show-checklist {
-  padding: 30px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  margin-bottom: 15px;
-    h3 {
-      text-align: center;
-      border-bottom: 1px solid #DCDCDD;
-    }
-      p {
-        text-align: center;
-      }
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
