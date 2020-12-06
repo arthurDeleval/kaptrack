@@ -19,14 +19,30 @@
 </div>
 
   <div class="show-checklist">
-    <h3><i class="fas fa-tasks"></i> <%= @checklist.title %></h3>
-    <p><i class="fas fa-chalkboard-teacher"></i> <%= @checklist.description %></p>
-    <p><i class="far fa-calendar-check"></i> <%= @checklist.deadline %></p>
-    <p><i class="fas fa-hourglass-start"></i> <%= @checklist.priority_level %>/3</p>
+    <div class="show-checklist-container">
+      <div class="show-checklist-top">
+        <div>
+          <%= link_to checklists_path, class:'btn-icons' do %>
+          <i class="fas fa-long-arrow-alt-left"></i>
+          <% end %>
+        </div>
+        <div><h3> <%= @checklist.title %></h3></div>
+         <div>
+          <%= link_to edit_checklist_path, class:'btn-icons' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+         </div>
+      </div>
+    </div>
+    <div class="show-checklist-container-description">
+      <div class="show-checklist-description"><p> Description : <%= @checklist.description %></p></div>
+      <div><p> Deadline : <%= @checklist.deadline %></p></div>
+
+    </div>
     <% if policy(Task).edit? %>
       <%= simple_form_for [@checklist, @task], remote: true do |f| %>
-        <%= f.input :description %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
+        <%= f.input :description, as: :string, label: false, placeholder: 'Add a description'  %>
+        <%= f.button :submit, class: 'btn-rose' %>
       <% end %>
     <% end %>
   </div>
@@ -34,7 +50,7 @@
     <div class="task-grid">
       <% @checklist.tasks.each do |task| %>
         <div class="task">
-          <%= task.description %>
+          <div><%= task.description %></div>
           <%#= f.label :validation %>
           <%#=f.check_box :validation, class: 'btn btn-checked'%>
         </div>
