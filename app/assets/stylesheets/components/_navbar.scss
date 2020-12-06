@@ -1,0 +1,27 @@
+.flag-icon .flag-icon-fr li {
+  margin-left: 20px;
+}
+
+.navbar-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.nav .navbar-nav {
+  display: none!important;
+  flex-direction: none !important;
+
+}
+
+.navbar-items {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav {
+ flex-wrap: wrap;
+}
