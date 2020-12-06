@@ -1,1 +1,92 @@
 // Specific CSS for your home-page
+body {
+    font-family: Montserrat, serif;
+    font-size: 26.6px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 32px;
+    text-decoration: none solid rgb(64, 78, 103);
+    color: #404E67;
+    text-align: left;
+    background-color: #EEF0F4;
+}
+
+h1 {
+  font-size: 26.6px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 32px;
+  text-decoration: none solid rgb(64, 78, 103);
+  color: #404E67;
+  text-align: left;
+  margin:0px,
+}
+
+.box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-width: 0;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 15px;
+  margin-top: 35px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.card-product img{
+  height: 200px;
+  width: 265px;
+  object-fit: cover;
+  padding:15px 0px;
+  border-radius:2px;
+}
+
+.card-product h2 {
+  font-size: 26.6px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 32px;
+  text-decoration: none solid rgb(64, 78, 103);
+  color: #404E67;
+  text-align: center;
+  margin: 0;
+  border-bottom: 1px solid rgb(64, 78, 103);
+}
+
+.card-product p {
+  font-size: 18px;
+  line-height: 32px;
+  opacity: .9;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.card-product-infos {
+  padding: 0px 0px 0px 15px;
+  flex-grow: 1;
+  height: 100%;
+  width: 265px;
+}
+
+.container-index{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  column-gap: 15px;
+}
