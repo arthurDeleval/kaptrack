@@ -11,35 +11,35 @@
     <div class="btn-index-checklists"><%= link_to "Add recipe", new_recipe_path, class: 'btn-main' %></div>
   <% end %>
 </div>
-<div class="container-grid">
-  <% @recipes.each do |recipe| %>
-    <div class="card-product">
-      <%= link_to recipe_path(recipe) do  %>
+
+<div class="container-index">
+  <div class="card-product">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe) do%>
         <% if recipe.photo.attached? %>
-        <%= cl_image_tag recipe.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag recipe.photo.key %>
         <% end %>
         <div class="card-product-infos">
-          <div class="card-product-container">
-            <div class="card-product-name pb-1">
-              <h2><%= recipe.name %></h2>
-            </div>
+          <h2><%= recipe.name %></h2>
+          <div class="card-infos">
+            <p><%= recipe.price %> €</p>
+            <p><%= recipe.preparation_time %></p>
+            <p>
+            <% if policy(recipe).edit? %>
+              <%= link_to edit_recipe_path(recipe), class:'btn-icons' do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            <% end %>
+              <% if policy(recipe).destroy? %>
+                <%= link_to recipes_path, method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
+              <% end %>
+            </p>
           </div>
-          <div class="card-product-recipes-container">
-            <div><%= recipe.specificity %></div>
-          </div>
-          <div class="card-product-recipes-container">
-            <div><p><%= recipe.price %>€</div>
-            <div><p><i class="far fa-clock"></i><%= recipe.preparation_time %></div>
-          </div>
-          </p>
-          </p>
-      <% end %>
         </div>
-    </div>
-  <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
-
-
-
-
 

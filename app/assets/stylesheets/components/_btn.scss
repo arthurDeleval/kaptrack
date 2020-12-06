@@ -22,27 +22,9 @@
   right: 0;
 }
 
-.btn-checklists-show-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-checklist-show {
+.btn-checklist {
   margin-top: 50px;
   margin-right: 20px;
-  position: fixed;
-  right: 0;
-}
-
-.btn-container-show {
-  display: flex;
-  align-items: right;
-  justify-content: center;
-}
-
-.btn-show-recipe {
-  margin: 20px;
   position: fixed;
   right: 0;
 }
@@ -61,7 +43,7 @@
   border-color: #7594D4;
 }
 
-.btn-lots-index {
+.btn-lots {
   position: fixed;
   top: 0;
   right: 0;

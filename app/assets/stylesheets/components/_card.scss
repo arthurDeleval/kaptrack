@@ -5,9 +5,10 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
+  justify-self: center;
   align-items: center;
   margin: 15px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .card-product img {
@@ -108,26 +109,12 @@
   margin: 0 auto;
 }
 
-.image-checklists-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .card-category-checklist-image img {
   width: 100px;
   height: 100%;
   border-radius: 4px;
 }
 
-.card-category-checklists-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-category-checklists-title {
-  text-align: center;
-}
 
 .card-container {
   display: grid;
@@ -142,37 +129,9 @@
 
 }
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  margin-left : 60px;
-  margin-top: 50px;
-}
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
 
 .card-product-container {
   display: flex;
@@ -225,12 +184,6 @@
   margin-top: 8px;
 }
 
-.card-product-recipes-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .card-product-lots {
   overflow: hidden;
   height: 300px;
@@ -241,9 +194,5 @@
   align-items: center;
   border-radius: 5px;
   margin-top: 60px;
-}
-
-.card-product-infos {
-  width: 100%;
 }
 
