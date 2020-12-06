@@ -1,3 +1,6 @@
+
+
+<div class="card-container-show">
 <div class="header-recipe ml-3 mr-3">
   <div>
     <%= link_to recipes_path, class:'btn-icons' do %>
@@ -17,41 +20,44 @@
     <% end %>
   </div>
 </div>
-
-
-<div class="card-container-show">
-  <div class="card-product-show">
+  <div class="card-prod-show">
     <% if @recipe.photo.attached? %>
-      <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @recipe.photo.key%>
     <% end %>
     <div class="card-product-infos-1">
       <div class="card-product-container">
         <div class="card-product-name">
           <h1><%=@recipe.name%></h1>
         </div>
-
       </div>
-      <div class="scrollable" style="height: 400px; overflow: scroll;">
-        <div class="mb-3">
-          <h2>Recipe decription</h2>
-          <%= @recipe.recipe_description %>
-
-          <p><%= @recipe.price %>€ ||
-          <%= @recipe.preparation_time %>(min) ||
-          <%= @recipe.specificity %>
-          </p>
+      <div class="card-show-infos">
+        <div class="card-show-infos-1">
+          <h2>Price: <%= @recipe.price %>€</h2>
+          <h2><%= @recipe.specificity %></h2>
+          <h2><i class="far fa-clock"></i><%= @recipe.preparation_time %> min</h2>
         </div>
+        <div>
+          <br>
+        <h2>Ingredients</h2>
+        <ul>
+        <% @recipe.product_recipes.each do |product_recipe| %>
+        <li>
+          <%= product_recipe.product.name %>
+          <%= product_recipe.recipe_quantity %>
+          <%= product_recipe.product.measure_unit %>
+        </li>
+        <% end %>
+        </ul>
+        </div>
+        <div>
+          <br>
+        <h2>Recipe steps</h2>
+          <p><%= @recipe.recipe_description %></p>
+        </div>
+          <br>
         <div>
           <h2>Meal description</h2>
-          <%= @recipe.meal_description %>
-        </div>
-        <div>
-          <h2>Ingredients</h2>
-          <% @recipe.product_recipes.each do |product_recipe| %>
-            <%= product_recipe.product.name %>
-            <%= product_recipe.recipe_quantity %>
-            <%= product_recipe.product.measure_unit %>
-          <% end %>
+          <p><%= @recipe.meal_description %></p>
         </div>
       </div>
     </div>

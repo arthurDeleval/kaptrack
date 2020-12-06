@@ -13,33 +13,29 @@
 </div>
 
 <div class="container-index">
-  <div class="card-product">
-    <% @recipes.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
+    <div class="card-prod">
       <%= link_to recipe_path(recipe) do%>
-        <% if recipe.photo.attached? %>
-          <%= cl_image_tag recipe.photo.key %>
-        <% end %>
-        <div class="card-product-infos">
-          <h2><%= recipe.name %></h2>
-          <div class="card-infos">
-            <p><%= recipe.price %> €</p>
-            <p><%= recipe.preparation_time %></p>
-            <p>
-            <% if policy(recipe).edit? %>
-              <%= link_to edit_recipe_path(recipe), class:'btn-icons' do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-            <% end %>
-              <% if policy(recipe).destroy? %>
-                <%= link_to recipes_path, method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end %>
-              <% end %>
-            </p>
-          </div>
-        </div>
+      <% if recipe.photo.attached? %>
+      <%= cl_image_tag recipe.photo.key %>
       <% end %>
-    <% end %>
-  </div>
+        <div class="card-prod-infos">
+        <h2><%= recipe.name %></h2>
+          <div class="card-infos">
+            <div class="card-infos-number">
+              <p>Price: <%= recipe.price %>€</p>
+              <p>Cost: <%= recipe.price %>€</p>
+              <p>Margin: <%= recipe.price %>%</p>
+            </div>
+            <div class="card-infos-other">
+              <p><%= recipe.specificity %></p>
+              <p><%= recipe.preparation_time %></p>
+              <p><i class="far fa-clock"></i> <%= recipe.preparation_time %> min</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
