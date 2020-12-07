@@ -11,6 +11,7 @@
         <div class="btn btn-primary">Add product</div>
         <div class="products" data-products="<%=Product.all.to_json%>"></div>
         <%= f.input :price, input_html: { class: "form-recipes-price" } %>
+        <%= f.input :cost, input_html: { class: "form-recipes-price" } %>
         <%= f.input :menu_visible, input_html: { class: "form-menu-visible" } %>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit %>

@@ -8,6 +8,7 @@
     <div class="btn btn-primary">Add product</div>
     <div class="products" data-products="<%=Product.all.order(:name).to_json%>"></div>
     <%= f.input :price %>
+    <%= f.input :cost %>
     <%= f.input :menu_visible %>
     <%= f.input :photo, as: :file %>
         <%= f.button :submit %>
