@@ -1,0 +1,18 @@
+
+<div class="container-index">
+  <% @products.each do |product| %>
+    <div class="card-prod">
+      <% if product.photo.attached? %>
+      <%= cl_image_tag product.photo.key %>
+      <% end %>
+        <div class="card-prod-infos">
+        <h2><%= product.name %></h2>
+        <div class="card-infos">
+          <div class="card-infos-number">
+            <p>Measure unit: <%= product.measure_unit %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
