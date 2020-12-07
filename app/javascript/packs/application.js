@@ -30,9 +30,13 @@ import { flatpickrFonction } from '../plugins/flatpickr';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import {displayRecipeProductLine} from "./display_recipe_product_line"
+import {displayDish} from "./display_new_dish_performance"
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  displayRecipeProductLine()
+  displayDish();
+  displayRecipeProductLine();
   flatpickrFonction();
+  
 });
