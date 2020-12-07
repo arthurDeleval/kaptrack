@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="navbar-logo">
-      <%= image_tag "kaptrack.png", alt: "Logo kap track", width: 60, height: 50 %>
+      <%= image_tag "kaptrack.png", alt: "Logo kap track", width: 80, height: 30 %>
     </div>
   <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -15,15 +15,14 @@
         <a class="nav-link" href="#">Import data</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Add recipe</a>
-      </li>
+       <li class="nav-link"><%= link_to "Add recipe", new_recipe_path %></li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add stock
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Add checklist</a>
+       <li class="nav-link"><%= link_to "Add checklist", new_checklist_path %></li>
       </li>
       <li class="nav-link">
         <span class="flag-icon flag-icon-fr"></span>

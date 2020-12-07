@@ -5,13 +5,13 @@
     <%= f.input :recipe_description, as: :text, placeholder:"write here all the steps of your recipe" %>
     <%= f.input :meal_description, as: :text, placeholder:"write a description or the story of your recipe (it will appear on the menu!)" %>
     <%= f.input :preparation_time %>
-    <div class="btn btn-primary">Add product</div>
+    <div class="btn-grey" >Add product</div>
     <div class="products" data-products="<%=Product.all.order(:name).to_json%>"></div>
     <%= f.input :price %>
     <%= f.input :cost %>
-    <%= f.input :menu_visible %>
+    <%= f.input :menu_visible, as: :boolean, input_html: { class: "toggle" } %>
     <%= f.input :photo, as: :file %>
-        <%= f.button :submit %>
+        <%= f.button :submit, class: 'btn-grey'%>
       </div>
     </div>
   <% end %>
