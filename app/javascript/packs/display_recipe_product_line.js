@@ -1,6 +1,6 @@
 
 const displayRecipeProductLine = () => {
-  const addBtn = document.querySelector(".btn.btn-primary");
+  const addBtn = document.querySelector(".btn-grey");
   const productsElement = document.querySelector(".products");
   if (productsElement){
     const products = JSON.parse(productsElement.dataset.products);
