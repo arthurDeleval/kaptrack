@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+
 import 'flag-icon-css/css/flag-icon.css'
 import { flatpickrFonction } from '../plugins/flatpickr';
 

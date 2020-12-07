@@ -1,7 +1,22 @@
-<div class="container">
-  <h1>All Products</h1>
+<div class="container-index">
   <% @products.each do |product| %>
-    <%= product.name %>
-    <%= product.measure_unit %>
+    <div class="card-prod">
+      <div class="card-prod-bin">
+          <%= link_to product_path(product), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      <% if product.photo.attached? %>
+      <%= cl_image_tag product.photo.key %>
+      <% end %>
+        <div class="card-prod-infos">
+        <h2><%= product.name %></h2>
+        <div class="card-infos">
+          <div class="card-infos-number">
+            <p>Measure unit: <%= product.measure_unit %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>

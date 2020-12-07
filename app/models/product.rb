@@ -4,4 +4,5 @@ class Product < ApplicationRecord
   has_many :suppliers, through: :lots
   validates :name, presence: true
   validates :measure_unit, presence: true
+  has_one_attached :photo
 end

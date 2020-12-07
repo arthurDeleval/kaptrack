@@ -37,5 +37,13 @@ li {
 
 .nav-link {
   font-weight: 300;
-  color: #EEF0F4;
+  color: #404E67;
+}
+
+.nav-link a {
+  color: #404E67;
+}
+
+.nav-link a:hover {
+  opacity: 0.5;
 }
