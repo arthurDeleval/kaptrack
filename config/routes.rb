@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :performances, only: [ :index, :create ]
+  resources :performances, only: [ :index, :new, :create ]
   resources :lots, only: [ :index, :create, :new, :edit, :update, :destroy ]
   resources :recipes
   resources :checklists do
