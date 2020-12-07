@@ -123,10 +123,6 @@
 
 }
 
-
-
-
-
 .card-product-container {
   display: flex;
   align-items: center;
@@ -134,8 +130,6 @@
   border-bottom: 1px solid #DCDCDD;
   margin: 10px 0px;
 }
-
-
 
 .card-product-lots {
   overflow: hidden;
@@ -149,3 +143,17 @@
   margin-top: 60px;
 }
 
+.card-category-checklists-title {
+  color: #404E67;
+  text-align:center;
+}
+
+.card-category-checklists a {
+  height: 100%;
+}
+
+
+.image-checklists-container {
+  height: 80px;
+  padding: 5px;
+}

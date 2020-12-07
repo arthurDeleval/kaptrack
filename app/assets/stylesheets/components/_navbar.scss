@@ -25,3 +25,17 @@
 .nav {
  flex-wrap: wrap;
 }
+
+li {
+  text-decoration: none;
+  list-style:none;
+}
+
+.mb-lg-0, .my-lg-0  {
+  padding-left: 170px;
+}
+
+.nav-link {
+  font-weight: 300;
+  color: #EEF0F4;
+}
