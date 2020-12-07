@@ -1,6 +1,24 @@
-<% @suppliers.each do |supplier| %>
-  <h2><%= supplier.name %></h2>
-  <p><%= supplier.address %>
-      <%= supplier.phone_number%>
-  </p>
-<% end %>
+
+<div class="container-index">
+  <% @suppliers.each do |supplier| %>
+  <div class="card-prod">
+     <% if supplier.photo.attached? %>
+     <%= cl_image_tag supplier.photo.key %>
+     <% end %>
+     <div class="card-prod-infos">
+        <h2><%= supplier.name %></h2>
+        <div class="card-infos">
+          <div class="card-infos-number">
+            <p>Address: <%= supplier.address %></p>
+          </div>
+          <div class="card-infos-other">
+            <p>Phone number: <%= supplier.phone_number %></p>
+          </div>
+          <div class="card-infos-other">
+            <p>Delivery estimation:<%= supplier.delivery_estimation %> days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
