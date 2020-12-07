@@ -26,7 +26,7 @@
           <i class="fas fa-long-arrow-alt-left"></i>
           <% end %>
         </div>
-        <div><h3> <%= @checklist.title %></h3></div>
+        <div class="checklist-title"><h3> <%= @checklist.title %></h3></div>
          <div>
           <%= link_to edit_checklist_path, class:'btn-icons' do %>
             <i class="far fa-edit"></i>
@@ -35,13 +35,13 @@
       </div>
     </div>
     <div class="show-checklist-container-description">
-      <div class="show-checklist-description"><p> Description : <%= @checklist.description %></p></div>
-      <div><p> Deadline : <%= @checklist.deadline %></p></div>
+      <div class="show-checklist-description">Description : <p><%= @checklist.description %></p></div>
+      <div class="show-checklist-deadline">Deadline :<p> <%= @checklist.deadline %></p></div>
 
     </div>
     <% if policy(Task).edit? %>
       <%= simple_form_for [@checklist, @task], remote: true do |f| %>
-        <%= f.input :description, as: :string, label: false, placeholder: 'Add a description'  %>
+        <%= f.input :description, as: :string, label: false, placeholder: 'Add a task'  %>
         <%= f.button :submit, class: 'btn-rose' %>
       <% end %>
     <% end %>

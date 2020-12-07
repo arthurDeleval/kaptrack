@@ -53,3 +53,12 @@ label {
   align-items: center;
   justify-content: space-between;
 }
+
+.btn:not(:disabled):not(.disabled) {
+  color: #A1A1A0;
+  border: 1px solid #A1A1A0;
+}
+
+
+
+

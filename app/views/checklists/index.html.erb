@@ -7,9 +7,6 @@
     %>
     <%= submit_tag "Search", class: "btn-search" %>
   <% end %>
-  <% if policy(Checklist).create? %>
-    <div class="btn-index-checklists"><%= link_to "New checklist", new_checklist_path, class: 'btn-main' %></div>
-  <% end %>
 </div>
 <div class="container">
   <div class="cards-container">
