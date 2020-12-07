@@ -85,6 +85,8 @@ h1 {
 }
 
 .card-infos {
+  display: flex;
+  flex-direction:column;
   padding: 0px;
   justify-content: space-evenly;
   height: 80%;
