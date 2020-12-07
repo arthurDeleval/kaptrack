@@ -54,3 +54,15 @@
 .checklist-title h3 {
   font-weight: 600;
 }
+
+.checklists-bin {
+  position: absolute;
+  top: 0;
+  right: 0;
+    i {
+      padding-right: 6px;
+      padding-top: 6px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+}
