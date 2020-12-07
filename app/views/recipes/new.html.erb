@@ -1,16 +1,16 @@
 <div class="box">
   <%= simple_form_for @recipe do |f| %>
-    <%= f.input :name, placeholder: 'recipe name'%>
-    <%= f.input :specificity %>
-    <%= f.input :recipe_description, as: :text, placeholder:"write here all the steps of your recipe" %>
-    <%= f.input :meal_description, as: :text, placeholder:"write a description or the story of your recipe (it will appear on the menu!)" %>
-    <%= f.input :preparation_time %>
+    <%= f.input :name, placeholder: 'Recipe name'%>
+    <%= f.input :specificity, placeholder: 'Category : hot, cold, spicy ...' %>
+    <%= f.input :recipe_description, as: :text, placeholder:"Write here all the steps of your recipe" %>
+    <%= f.input :meal_description, as: :text, placeholder:"Write a description or the story of your recipe (it will appear on the menu!)" %>
+    <%= f.input :preparation_time, placeholder: 'In min for the cooker' %>
     <div class="btn-grey" >Add product</div>
     <div class="products" data-products="<%=Product.all.order(:name).to_json%>"></div>
-    <%= f.input :price %>
-    <%= f.input :cost %>
+    <%= f.input :price, placeholder: 'Price for the customer' %>
+    <%= f.input :cost, placeholder: 'Cost for the restaurant' %>
     <%= f.input :menu_visible, as: :boolean, input_html: { class: "toggle" } %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, :label=>"Picture", as: :file %>
         <%= f.button :submit, class: 'btn-grey'%>
       </div>
     </div>

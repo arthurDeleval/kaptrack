@@ -1,6 +1,6 @@
 <div class="box">
   <%= simple_form_for(@checklist, remote: true) do |f| %>
-  <%= f.input :title, input_html: { class: "form-title" } %>
+  <%= f.input :title, placeholder: 'Recipe name', input_html: { class: "form-title" } %>
   <%= f.input :description, input_html: { class: "form-description" } %>
   <%= f.input :deadline, input_html: { class: "form-deadline" } %>
   <%= f.input :priority_level, input_html: { class: "form-priority-level" } %>
