@@ -6,17 +6,8 @@
       <div><h2><i class="fas fa-utensils"></i> <%= link_to "Recipes", recipes_path, class: "side-link" %></h2></div>
       <div><h2><i class="fas fa-drumstick-bite"></i> <%= link_to "Menu", "#", class: "side-link" %></h2></div>
       <div><h2><i class="fas fa-truck-moving"></i> <%= link_to "Stocks", lots_path, class: "side-link" %></h2></div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger"><%= link_to "Stocks", lots_path, class: "side-link" %></button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" ><%= link_to "Suppliers", suppliers_path, class: "side-link" %></a>
-          <a class="dropdown-item" ><%= link_to "products", products_path, class: "side-link" %></a>
-          <div class="dropdown-divider"></div>
-        </div>
-      </div>
+      <div><h2><%= link_to "Suppliers", lots_path, class: "side-link" %></h2></div>
+      <div><h2><%= link_to "Products", lots_path, class: "side-link" %></h2></div>
       <div><h2><i class="fas fa-tasks"></i> <%= link_to "Checklists", checklists_path, class: "side-link" %></h2></div>
     </div>
   </div>
