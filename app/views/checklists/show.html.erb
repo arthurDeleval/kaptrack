@@ -1,62 +1,50 @@
-<div class="header-recipe ml-3 mr-3">
-  <div>
-    <%= link_to checklists_path, class:'btn-icons' do %>
-      <i class="fas fa-long-arrow-alt-left"></i>
-    <% end %>
-  </div>
-  <div class="p-2">
-    <% if policy(Checklist).edit? %>
-      <%= link_to edit_checklist_path, class:'btn-icons' do %>
-        <i class="far fa-edit"></i>
-      <% end %>
-    <% end %>
-    <% if policy(Checklist).destroy? %>
-      <%= link_to checklist_path, class:'btn-icons', method: :delete, data: { confirm: "Are you sure ?"} do %>
-        <i class="fas fa-trash-alt"></i>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-  <div class="show-checklist">
-    <div class="show-checklist-container">
-      <div class="show-checklist-top">
-        <div>
-          <%= link_to checklists_path, class:'btn-icons' do %>
-          <i class="fas fa-long-arrow-alt-left"></i>
-          <% end %>
-        </div>
-        <div class="checklist-title"><h3> <%= @checklist.title %></h3></div>
-         <div>
+<div class="show-checklist">
+  <div class="show-checklist-container">
+    <div class="show-checklist-top">
+      <div>
+        <%= link_to checklists_path, class:'btn-icons' do %>
+        <i class="fas fa-long-arrow-alt-left"></i>
+        <% end %>
+      </div>
+      <div class="checklist-title"><h3> <%= @checklist.title %></h3></div>
+       <div>
+        <% if policy(Checklist).edit? %>
           <%= link_to edit_checklist_path, class:'btn-icons' do %>
             <i class="far fa-edit"></i>
           <% end %>
-         </div>
-      </div>
+        <% end %>
+        <% if policy(Checklist).destroy? %>
+          <%= link_to checklist_path, class:'btn-icons', method: :delete, data: { confirm: "Are you sure ?"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+       </div>
     </div>
-    <div class="show-checklist-container-description">
-      <div class="show-checklist-description">Description : <p><%= @checklist.description %></p></div>
-      <div class="show-checklist-deadline">Deadline :<p> <%= @checklist.deadline %></p></div>
+  </div>
+  <div class="show-checklist-container-description">
+    <div class="show-checklist-description">Description : <p><%= @checklist.description %></p></div>
+    <div class="show-checklist-deadline">Deadline :<p> <%= @checklist.deadline %></p></div>
 
-    </div>
-    <% if policy(Task).edit? %>
-      <%= simple_form_for [@checklist, @task], remote: true do |f| %>
-        <%= f.input :description, as: :string, label: false, placeholder: 'Add a task'  %>
-        <%= f.button :submit, class: 'btn-rose' %>
-      <% end %>
+  </div>
+  <% if policy(Task).edit? %>
+    <%= simple_form_for [@checklist, @task], remote: true do |f| %>
+      <%= f.input :description, as: :string, label: false, placeholder: 'Add a task'  %>
+      <%= f.button :submit, class: 'btn-rose' %>
+    <% end %>
+  <% end %>
+</div>
+<div class="container">
+  <div class="task-grid">
+    <% @checklist.tasks.each do |task| %>
+      <div class="task">
+        <div><%= task.description %></div>
+        <%#= f.label :validation %>
+        <%#=f.check_box :validation, class: 'btn btn-checked'%>
+      </div>
     <% end %>
   </div>
-  <div class="container">
-    <div class="task-grid">
-      <% @checklist.tasks.each do |task| %>
-        <div class="task">
-          <div><%= task.description %></div>
-          <%#= f.label :validation %>
-          <%#=f.check_box :validation, class: 'btn btn-checked'%>
-        </div>
-      <% end %>
-    </div>
-  </div>
 </div>
+</div>
+
 
 
