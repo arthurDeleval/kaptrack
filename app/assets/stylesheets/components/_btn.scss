@@ -59,21 +59,21 @@
 .btn-rose {
   background-color: #F8C3A7;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #404E67;
 }
 
 .btn-grey {
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: #404F67;
   color: white;
   font-weight: 300;
+  cursor: pointer;
 }
 .btn-grey:hover {
   transition: all 0.2s ease-out;
-  padding: 8px;
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: white;
   color: #404F67;
   border: 1px solid #404F67;
@@ -81,7 +81,7 @@
 
 .btn:not(:disabled):not(.disabled) {
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: #404F67;
   color: white;
   font-weight: 300;
