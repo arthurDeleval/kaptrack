@@ -2,6 +2,11 @@
 <div class="container-index">
   <% @suppliers.each do |supplier| %>
   <div class="card-prod">
+          <div class="card-prod-bin">
+          <%= link_to supplier_path(supplier), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
      <% if supplier.photo.attached? %>
      <%= cl_image_tag supplier.photo.key %>
      <% end %>
