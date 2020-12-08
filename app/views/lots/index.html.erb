@@ -1,6 +1,16 @@
 <div class="container-index">
   <% @lots.each do |lot| %>
     <div class="card-prod">
+      <div class="card-prod-bin">
+        <%= link_to lot_path(lot), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <% if policy(Lot).edit? %>
+          <%= link_to edit_lot_path(lot), class:'btn-icons' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+        <% end %>
+      </div>
       <% if lot.photo.attached? %>
       <%= cl_image_tag lot.photo.key %>
       <% end %>
@@ -15,7 +25,7 @@
             <p>Expiration date: <%= lot.expiration_date %></p>
           </div>
           <div class="card-infos-other">
-            <p>Supplier:<%= lot.supplier.name %>º</p>
+            <p>Supplier:<%= lot.supplier.name %></p>
           </div>
         </div>
       </div>

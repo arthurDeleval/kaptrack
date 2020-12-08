@@ -1,6 +1,18 @@
 <div class="container-index">
   <% @recipes.each do |recipe| %>
     <div class="card-prod">
+      <div class="card-prod-bin">
+        <%  if recipe.customer_consumption_ids.size == 0 %>
+          <%= link_to recipe_path(recipe), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+        <% if policy(Recipe).edit? %>
+          <%= link_to edit_recipe_path(recipe), class:'btn-icons' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+        <% end %>
+      </div>
       <%= link_to recipe_path(recipe) do%>
       <% if recipe.photo.attached? %>
       <%= cl_image_tag recipe.photo.key %>
