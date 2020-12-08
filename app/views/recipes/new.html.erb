@@ -10,7 +10,7 @@
     <div class="products" data-products="<%=Product.all.order(:name).to_json%>"></div>
     <%= f.input :price, placeholder: 'Price for the customer' %>
     <%= f.input :cost, placeholder: 'Cost for the restaurant' %>
-    <%= f.input :menu_visible, as: :boolean, input_html: { class: "toggle" } %>
+    <%= f.input :menu_visible, label: "Rendre le Menu visible", input_html: { class: "toggle" } %>
     <%= f.input :photo, :label=>"Picture", as: :file %>
         <%= f.button :submit, class: 'btn-grey'%>
       </div>

@@ -45,6 +45,7 @@ class LotsController < ApplicationController
     @lot = Lot.find(params[:id])
     authorize @lot
     @lot.destroy
+    redirect_to lots_path
   end
 
   private

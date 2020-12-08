@@ -15,11 +15,15 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <% unless params[:controller] == 'pages' %>
     <div class="d-flex">
+    <% end %>
       <%= render 'shared/sidebar' %>
       <div class="d-flex flex-column">
         <%= yield %>
       </div>
+    <% unless params[:controller] == 'pages' %>
     </div>
+    <% end %>
   </body>
 </html>

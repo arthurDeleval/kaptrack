@@ -32,18 +32,33 @@ li {
 }
 
 .mb-lg-0, .my-lg-0  {
-  padding-left: 170px;
+  padding-left: 150px;
 }
 
 .nav-link {
   font-weight: 300;
   color: #404E67;
+  margin-left: 15px;
 }
 
 .nav-link a {
   color: #404E67;
 }
 
-.nav-link a:hover {
+.navbar-light .navbar-nav .nav-link {
+  color: #404E67;
+ }
+
+.navbar-light .navbar-nav .nav-link:hover {
   opacity: 0.5;
 }
+
+.active {
+  border-bottom: 2px solid #F8C3A7;
+}
+
+
+
+
+
+

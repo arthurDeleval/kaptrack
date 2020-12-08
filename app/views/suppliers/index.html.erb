@@ -6,6 +6,11 @@
           <%= link_to supplier_path(supplier), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
+          <% if policy(Supplier).edit? %>
+          <%= link_to edit_supplier_path(supplier), class:'btn-icons' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+        <% end %>
         </div>
      <% if supplier.photo.attached? %>
      <%= cl_image_tag supplier.photo.key %>
@@ -14,16 +19,19 @@
         <h2><%= supplier.name %></h2>
         <div class="card-infos">
           <div class="card-infos-number">
-            <p>Address: <%= supplier.address %></p>
+            <p><i class="fas fa-map-marked-alt"></i> : <%= supplier.address %></p>
           </div>
           <div class="card-infos-other">
-            <p>Phone number: <%= supplier.phone_number %></p>
+            <p><i class="fas fa-mobile-alt"></i> : <%= supplier.phone_number %></p>
           </div>
           <div class="card-infos-other">
-            <p>Delivery estimation:<%= supplier.delivery_estimation %> days</p>
+            <p><i class="fas fa-truck"></i> : Delivery in <%= supplier.delivery_estimation %> days</p>
           </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+
+
+

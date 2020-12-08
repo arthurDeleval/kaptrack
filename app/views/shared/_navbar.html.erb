@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top <%= 'd-none' if params[:controller] == 'pages' %>">
    <div class="navbar-logo">
       <%= image_tag "kaptrackLogo.png", alt: "Logo kap track", width: 200, height: 30 %>
     </div>
@@ -12,16 +12,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <li class="nav-link"><%= link_to "Import data", new_performance_path %></li>
+        <li class="nav-link <%= 'active' if current_page?(new_performance_path) %>"><%= link_to "Import data", new_performance_path %></li>
       </li>
       <li class="nav-item">
-        <li class="nav-link"><%= link_to "Add recipe", new_recipe_path %>
+        <li class="nav-link <%= 'active' if current_page?(new_recipe_path) %>"><%= link_to "Add recipe", new_recipe_path %></li>
       </li>
       <li class="nav-item">
-         <li class="nav-link"><%= link_to "Add Stock", new_lot_path %>
+        <li class="nav-link <%= 'active' if current_page?(new_checklist_path) %>"><%= link_to "Add checklist", new_checklist_path %></li>
       </li>
-      <li class="nav-item">
-        <li class="nav-link"><%= link_to "Add checklist", new_checklist_path %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle <%= 'active' if current_page?(new_supplier_path) || current_page?(new_lot_path)%>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add a stock
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Add a stock", new_lot_path, class: "dropdown-item" %>
+          <%= link_to "Add a supplier", new_supplier_path, class: "dropdown-item" %>
+          <%= link_to "Add a product", new_product_path, class: "dropdown-item" %>
+        </div>
       </li>
       <li class="nav-link">
         <span class="flag-icon flag-icon-fr"></span>
@@ -36,4 +43,3 @@
       </li>
   </div>
 </nav>
-

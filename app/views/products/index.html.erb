@@ -5,6 +5,11 @@
           <%= link_to product_path(product), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
+        <% if policy(Product).edit? %>
+          <%= link_to edit_product_path(product), class:'btn-icons' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+        <% end %>
         </div>
       <% if product.photo.attached? %>
       <%= cl_image_tag product.photo.key %>
@@ -13,7 +18,7 @@
         <h2><%= product.name %></h2>
         <div class="card-infos">
           <div class="card-infos-number">
-            <p>Measure unit: <%= product.measure_unit %></p>
+            <p><i class="fas fa-balance-scale-right"></i> : Measure unit <%= product.measure_unit %></p>
           </div>
         </div>
       </div>
