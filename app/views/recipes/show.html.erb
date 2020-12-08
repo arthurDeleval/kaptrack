@@ -32,15 +32,15 @@
       </div>
       <div class="card-show-infos">
         <div class="card-show-infos-1">
-          <h2>Price: <%= @recipe.price %>€</h2>
-          <h2>Cost: <%= @recipe.cost %>€</h2>
-          <h2>Margin: %</h2>
+          <h2><i class="fas fa-money-bill-wave-alt"></i> Price : <%= @recipe.price %>€</h2>
+          <h2><i class="fas fa-coins"></i> Cost : <%= @recipe.cost %>€</h2>
+          <h2><i class="fas fa-chart-line"></i> Margin : %</h2>
           <h2><%= @recipe.specificity %></h2>
-          <h2><i class="far fa-clock"></i><%= @recipe.preparation_time %> min</h2>
+          <h2><i class="far fa-clock"></i> <%= @recipe.preparation_time %> min</h2>
         </div>
         <div>
           <br>
-        <h2>Ingredients</h2>
+        <h2><i class="fas fa-shopping-cart"></i> Ingredients</h2>
         <ul>
         <% @recipe.product_recipes.each do |product_recipe| %>
         <li>
@@ -51,14 +51,14 @@
         <% end %>
         </ul>
         </div>
-        <div>
+        <div class="card-show-description">
           <br>
-        <h2>Recipe steps</h2>
+        <h2><i class="fas fa-list"></i> Recipe steps</h2>
           <p><%= @recipe.recipe_description %></p>
         </div>
           <br>
-        <div>
-          <h2>Meal description</h2>
+        <div class="card-show-description">
+          <h2><i class="far fa-comments"></i> Meal description</h2>
           <p><%= @recipe.meal_description %></p>
         </div>
       </div>
