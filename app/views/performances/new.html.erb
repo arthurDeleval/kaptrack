@@ -1,10 +1,10 @@
 <div class="box">
     <h1>Update your performance</h1>
     <%= simple_form_for [@performance] do |f| %>
-      <%= f.input  :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder:"indicate a specific date" %>
-      <%= f.input :server_number, as: :integer, placeholder:"indicate the number of employees" %>
-      <%= f.input :customer_number, as: :integer, placeholder:"indicate the number of employees" %>
-      <h6> Dishes sold</h6>
+      <%= f.input  :date, as: :string, :label=>"Enter a day", required: false, input_html: {class: "datepicker"}, placeholder:"indicate a specific date" %>
+      <%= f.input :server_number,:label=>"Number of employee", as: :integer, placeholder:"indicate the number of employees" %>
+      <%= f.input :customer_number, :label=>"Number of customer", as: :integer, placeholder:"indicate the number of customers" %>
+      <p> Dishes sold</p>
     <div class="recipes" data-recipes="<%=Recipe.all.order(:name).to_json%>"></div>
       <div class="btn btn-primary">Add a dish sold</div>
       <%= f.button :submit, "Update dashboard" %>
