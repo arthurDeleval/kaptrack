@@ -9,9 +9,9 @@
         <h2><%= recipe.name %></h2>
           <div class="card-infos">
             <div class="card-infos-number">
-              <p>Price: <%= recipe.price %>€</p>
-              <p>Cost: <%= recipe.cost %>€</p>
-              <p>Margin: %</p>
+              <p><i class="fas fa-money-bill-wave-alt"></i> Price <%= recipe.price %>€</p>
+              <p><i class="fas fa-coins"></i> Cost <%= recipe.cost %>€</p>
+              <p><i class="fas fa-chart-line"></i> Margin: %</p>
             </div>
             <div class="card-infos-other">
               <p><%= recipe.specificity %></p>
