@@ -21,6 +21,18 @@
   </div>
 </div>
   <div class="card-prod-show">
+    <div class="card-prod-bin-show">
+      <%  if @recipe.customer_consumption_ids.size == 0 %>
+        <%= link_to recipe_path(@recipe), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+      <% if policy(Recipe).edit? %>
+        <%= link_to edit_recipe_path(@recipe), class:'btn-icons' do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+      <% end %>
+    </div>
     <% if @recipe.photo.attached? %>
       <%= cl_image_tag @recipe.photo.key%>
     <% end %>
