@@ -27,6 +27,7 @@ import "bootstrap";
 
 import 'flag-icon-css/css/flag-icon.css'
 import { flatpickrFonction } from '../plugins/flatpickr';
+import { revenueFunction } from '../plugins/revenue_chart';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,5 +40,6 @@ document.addEventListener('turbolinks:load', () => {
   displayDish();
   displayRecipeProductLine();
   flatpickrFonction();
+  revenueFunction();
   
 });
