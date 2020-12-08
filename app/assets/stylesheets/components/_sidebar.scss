@@ -58,3 +58,19 @@
  font-size: 14px !important;
 }
 
+.dropdown-menu {
+  border-radius: 2px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #404E67;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
