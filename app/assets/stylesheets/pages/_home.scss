@@ -149,6 +149,7 @@ h1 {
   margin-top: 15px;
   border-radius: 2px;
   padding: 30px;
+  position: relative;
   }
 
 .card-product-infos-1 {
@@ -199,8 +200,20 @@ h1 {
 
 .card-prod-bin{
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 12px;
+  right: 2px;
+    i {
+      padding-right: 6px;
+      padding-top: 6px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+}
+
+.card-prod-bin-show{
+  position: absolute;
+  top: 35px;
+  right: 20px;
     i {
       padding-right: 6px;
       padding-top: 6px;
@@ -212,4 +225,10 @@ h1 {
 .card-show-description p {
   font-weight: 300;
   font-size: 16px;
+}
+
+.card-prod-menu{
+  position: absolute;
+  top: 22px;
+  left: 10px;
 }

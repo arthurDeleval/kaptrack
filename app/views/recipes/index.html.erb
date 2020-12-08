@@ -1,6 +1,11 @@
 <div class="container-index">
   <% @recipes.each do |recipe| %>
     <div class="card-prod">
+      <div class="card-prod-menu">
+        <%= simple_form_for recipe do |f| %>
+          <%= f.input :menu_visible, as: :boolean, input_html: { class: "toggle" } %>
+        <% end %>
+      </div>
       <div class="card-prod-bin">
         <%  if recipe.customer_consumption_ids.size == 0 %>
           <%= link_to recipe_path(recipe), method: :delete, class:'btn-icons', data: { confirm: "Are you sure?"} do %>
