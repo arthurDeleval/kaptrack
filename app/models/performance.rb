@@ -7,7 +7,7 @@ class Performance < ApplicationRecord
 
   def revenue
     result = 0
-    customer_consumptions.each do |cons|
+    self.customer_consumptions.each do |cons|
       result += cons.quantity * cons.recipe.price
     end
     result
@@ -43,11 +43,6 @@ class Performance < ApplicationRecord
   end
 
   def top_dish_sold
-    number_dish_served = 0
-    customer_consumptions.each do |cons|
-      number_dish_served += cons.quantity
-      dish_name = cons.recipe.name
-    end
-    dish_name.sort_by(number_dish_served).max(3)
+    customer_consumptions.order(quantity: :desc).take(3)
   end
 end
