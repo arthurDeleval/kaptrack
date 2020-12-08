@@ -27,12 +27,15 @@ import "bootstrap";
 
 import 'flag-icon-css/css/flag-icon.css'
 import { flatpickrFonction } from '../plugins/flatpickr';
+import { revenueFunction } from '../plugins/revenue_chart';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import {displayRecipeProductLine} from "./display_recipe_product_line"
-import {displayDish} from "./display_new_dish_performance"
-import {submitForm} from "./submit_form"
+
+import {displayRecipeProductLine} from "./display_recipe_product_line";
+import {displayDish} from "./display_new_dish_performance";
+import {submitForm} from "./submit_form";
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,6 +43,6 @@ document.addEventListener('turbolinks:load', () => {
   displayDish();
   displayRecipeProductLine();
   flatpickrFonction();
+  revenueFunction();
   submitForm();
-
 });

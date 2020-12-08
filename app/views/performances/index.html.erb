@@ -1,3 +1,17 @@
-<div class="container">
+<div class="container-index">
   <h2>Oversee your success</h2>
 </div>
+  <div class="box">
+    <h1>CA & dishes performances by day</h1>
+
+    <% revenue_array = []%>
+    <% date_array = [] %>
+    <% Performance.all.each do|performance| %>
+      <% revenue_array << performance.revenue.to_i %>
+      <% date_array << performance.date %>
+    <% end %>
+
+    <canvas id="revenue" width="600" height="200" data-performances="<%=revenue_array.to_json%>" data-date="<%= date_array %>"></canvas>
+  </div>
+  <% console %> 
+
