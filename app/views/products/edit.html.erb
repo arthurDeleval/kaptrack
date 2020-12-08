@@ -1,0 +1,9 @@
+<div class="box">
+  <h1>Edit a product</h1>
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :measure_unit %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

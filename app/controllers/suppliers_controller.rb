@@ -38,11 +38,12 @@ class SuppliersController < ApplicationController
     @supplier = Supplier.find(params[:id])
     authorize @supplier
     @supplier.destroy
+    redirect_to suppliers_path
   end
 
   private
 
   def supplier_params
-    params.require(:supplier).permit(:name, :address, :phone_number, :delivery_estimation,:photo)
+    params.require(:supplier).permit(:name, :address, :phone_number, :delivery_estimation, :photo)
   end
 end

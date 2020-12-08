@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
     if @recipe.update(recipe_params)
-      redirect_to @recipe
+      redirect_to recipes_path
     else
       render :edit
     end
