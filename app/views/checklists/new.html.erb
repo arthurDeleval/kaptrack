@@ -1,4 +1,5 @@
 <div class="box">
+  <h1>Create a checklist</h1>
   <%= simple_form_for(@checklist, remote: true) do |f| %>
   <%= f.input :title, placeholder: 'Recipe name', input_html: { class: "form-title" } %>
   <%= f.input :description, input_html: { class: "form-description" } %>
