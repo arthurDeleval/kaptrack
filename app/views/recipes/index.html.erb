@@ -2,7 +2,7 @@
   <% @recipes.each do |recipe| %>
     <div class="card-prod">
       <div class="card-prod-menu">
-        <%= simple_form_for recipe do |f| %>
+        <%= simple_form_for recipe, html: { id: :edit_menu_visibility } do |f| %>
           <%= f.input :menu_visible, label: "On the menu", id: :menu_visible %>
         <% end %>
       </div>
@@ -41,4 +41,3 @@
     </div>
   <% end %>
 </div>
-
