@@ -15,8 +15,8 @@ if(ctx){
         {
           label: 'Revenue',
           data: perf,
-          backgroundColor: '#D6E9C6',
-          borderColor: '#D6E9C6',
+          backgroundColor: '#F8C3A7',
+          borderColor: '#F8C3A7',
           borderWidth: 1
         },
       ]
