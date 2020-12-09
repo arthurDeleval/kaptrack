@@ -1,15 +1,17 @@
-<% unless params[:controller] == 'pages' || params[:controller] == 'menus' %>
-<div class="d-flex sidebar-container">
-  <div class="headers-sidebar">
-    <div class="container-headers">
-      <li class="<%= 'active' if current_page?(performances_path) %>"><div><h2><i class="far fa-chart-bar"></i> <%= link_to "Dashboard", performances_path, class: "side-link" %></h2></div></li>
-      <li class="<%= 'active' if current_page?(recipes_path) %>"><div><h2><i class="fas fa-utensils"></i> <%= link_to "Recipes", recipes_path, class: "side-link" %></h2></div></li>
-      <div><h2><i class="fas fa-drumstick-bite"></i> <%= link_to "Menu", menus_path, class: "side-link" %></h2></div>
-      <li class="<%= 'active' if current_page?(lots_path) %>"><div><h2><i class="fas fa-truck-moving"></i> <%= link_to "Stocks", lots_path, class: "side-link" %></h2></div></li>
-      <li class="<%= 'active' if current_page?(suppliers_path) %>"><div><h2><i class="far fa-handshake"></i> <%= link_to "Suppliers", suppliers_path, class: "side-link" %></h2></div></li>
-      <li class="<%= 'active' if current_page?(products_path) %>"><div><h2><i class="fas fa-parachute-box"> </i> <%= link_to "Products", products_path, class: "side-link" %></h2></div></li>
-      <li class="<%= 'active' if current_page?(checklists_path) %>"><div><h2><i class="fas fa-tasks"></i> <%= link_to "Checklists", checklists_path, class: "side-link " %></h2></div></li>
+<% unless params[:controller] == 'pages' %>
+  <div class="d-flex sidebar-container">
+    <div class="headers-sidebar">
+      <div class="container-headers">
+        <ul>
+          <li class="<%= 'active' if current_page?(performances_path) %>"><div><h2><i class="far fa-chart-bar"></i> <%= link_to "Dashboard", performances_path, class: "side-link" %></h2></div></li>
+          <li class="<%= 'active' if current_page?(recipes_path) %>"><div><h2><i class="fas fa-utensils"></i> <%= link_to "Recipes", recipes_path, class: "side-link" %></h2></div></li>
+          <li class="<%= 'active' if current_page?(menus_path) %>"><div><h2><i class="fas fa-drumstick-bite"></i> <%= link_to "Menu", menus_path, class: "side-link" %></h2></div></li>
+          <li class="<%= 'active' if current_page?(lots_path) %>"><div><h2><i class="fas fa-truck-moving"></i> <%= link_to "Stocks", lots_path, class: "side-link" %></h2></div></li>
+          <li class="<%= 'active' if current_page?(suppliers_path) %>"><div><h2><i class="far fa-handshake"></i> <%= link_to "Suppliers", suppliers_path, class: "side-link" %></h2></div></li>
+          <li class="<%= 'active' if current_page?(products_path) %>"><div><h2><i class="fas fa-parachute-box"> </i> <%= link_to "Products", products_path, class: "side-link" %></h2></div></li>
+          <li class="<%= 'active' if current_page?(checklists_path) %>"><div><h2><i class="fas fa-tasks"></i> <%= link_to "Checklists", checklists_path, class: "side-link " %></h2></div></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 <% end %>

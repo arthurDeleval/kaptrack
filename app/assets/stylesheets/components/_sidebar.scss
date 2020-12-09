@@ -21,7 +21,7 @@
     text-decoration: none;
   }
   a {
-    font-size: 14px;
+    font-size: 25px;
   }
 }
 
@@ -34,13 +34,25 @@
 .container-headers {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
+  margin: 50px 25px;
+
+  ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+
+  }
 
   h2 {
-    margin-top: 80px;
-    font-size: 14px;
+    margin-top: 50px;
+    font-size: 20px;
   }
 }
 
@@ -55,7 +67,7 @@
 
 
 .container-headers h2 a {
- font-size: 14px !important;
+ font-size: 20px !important;
 }
 
 .dropdown-menu {

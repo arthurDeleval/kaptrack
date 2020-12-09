@@ -1,8 +1,8 @@
 <div class="box">
   <h1>Create a checklist</h1>
   <%= simple_form_for(@checklist, remote: true) do |f| %>
-  <%= f.input :title, placeholder: 'Recipe name', input_html: { class: "form-title" } %>
-  <%= f.input :description, input_html: { class: "form-description" } %>
+  <%= f.input :title %>
+  <%= f.input :description %>
   <%= f.input  :deadline, as: :string, :label=>"Date of creation", required: false, input_html: {class: "datepicker"}, placeholder:"indicate a specific date" %>
   <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: 'btn-grey mb-2' %>

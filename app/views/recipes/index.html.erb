@@ -20,7 +20,9 @@
       </div>
         <%= link_to recipe_path(recipe) do%>
           <% if recipe.photo.attached? %>
+          <div class="card-photo">
             <%= cl_image_tag recipe.photo.key %>
+          </div>
           <% end %>
           <div class="card-prod-infos">
           <h2><%= recipe.name %></h2>
