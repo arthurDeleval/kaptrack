@@ -2,7 +2,7 @@
   <% @recipes.each do |recipe| %>
     <div class="card-prod">
       <div class="card-prod-menu">
-        <%= simple_form_for recipe, html: { id: :edit_menu_visibility } do |f| %>
+        <%= simple_form_for recipe, html: { class: "edit_menu_visibility" } do |f| %>
           <%= f.input :menu_visible, label: "On the menu", id: :menu_visible %>
         <% end %>
       </div>
@@ -18,23 +18,35 @@
           <% end %>
         <% end %>
       </div>
-      <%= link_to recipe_path(recipe) do%>
-      <% if recipe.photo.attached? %>
-      <%= cl_image_tag recipe.photo.key %>
-      <% end %>
-        <div class="card-prod-infos">
-        <h2><%= recipe.name %></h2>
+        <%= link_to recipe_path(recipe) do%>
+          <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key %>
+          <% end %>
+          <div class="card-prod-infos">
+          <h2><%= recipe.name %></h2>
           <div class="card-infos">
             <div class="card-infos-number">
               <p><i class="fas fa-money-bill-wave-alt"></i> <%= recipe.price %>€</p>
               <p><i class="fas fa-coins"></i> <%= recipe.cost %>€</p>
-              <p><i class="fas fa-chart-line"></i> <%= (recipe.price - recipe.cost) / recipe.cost.to_f.round(2) * 100 %>%</p>
+              <p><i class="fas fa-chart-line"></i> <%= (((recipe.price - recipe.cost) / recipe.cost.to_f).round(2) * 100) %>%</p>
             </div>
             <div class="card-infos-other">
-              <p><%= recipe.specificity %></p>
-              <p><%= recipe.preparation_time %></p>
+              <% case recipe.specificity %>
+              <% when "spicy" %>
+                <p><i class="fas fa-pepper-hot"></i></p>
+              <% when "very spicy" %>
+                <p><i class="fas fa-pepper-hot" ></i><i class="fas fa-pepper-hot" ></i></p>
+              <% when "healthy" %>
+                <p><i class="fas fa-heartbeat"></i></p>
+              <% when "veggie" %>
+                <p><i class="fas fa-carrot"></i></p>
+              <% when "sweet" %>
+                <p><i class="fas fa-cookie-bite"></i></p>
+              <% else %>
+                <p>no specificity</p>
+              <% end %>
               <p><i class="far fa-clock"></i> <%= recipe.preparation_time %> min</p>
-            </div>
+          </div>
           </div>
         <% end %>
       </div>

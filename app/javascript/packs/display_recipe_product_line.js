@@ -4,7 +4,7 @@ const displayRecipeProductLine = () => {
   const productsElement = document.querySelector(".products");
   if (productsElement){
     const products = JSON.parse(productsElement.dataset.products);
-    const option = products.map(product => `<option value="${product.id}">${product.name}</option>`).join()
+    const option = products.map(product => `<option value="${product.id}">${product.name} - ${product.measure_unit}</option>`).join()
 
     addBtn.addEventListener("click", (event) => {
       const HTML = `
@@ -14,6 +14,7 @@ const displayRecipeProductLine = () => {
             ${option}
           </select>
           <input type="number" name="products[][quantity]" class="form-control" placeholder="quantity">
+          <div></div>
         </div>
         `
       productsElement.insertAdjacentHTML("beforeend",HTML)

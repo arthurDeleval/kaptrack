@@ -43,6 +43,6 @@ document.addEventListener('turbolinks:load', () => {
   displayDish();
   displayRecipeProductLine();
   flatpickrFonction();
-  revenueFunction();
+  //revenueFunction();
   submitForm();
 });
