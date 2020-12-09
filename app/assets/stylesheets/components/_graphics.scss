@@ -1,0 +1,53 @@
+.wrapper-graph {
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  grid-gap: 50px;
+  grid-template-rows:repeat(12, 100px);
+  margin-top: 110px;
+}
+canvas {
+   background-color: white;
+  border-radius: 2px;
+}
+
+.canva-graph h1 {
+  padding: 10px 0px 0px 10px;
+}
+
+.canva-graph {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+ border-radius: 2px;
+}
+
+.one {
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
+}
+.second {
+  margin-top: 110px;
+  grid-column: 1 / 4;
+  grid-row: 3 / 5;
+}
+.third {
+  margin-top: 220px;
+  grid-column: 1 / 4;
+  grid-row: 5 / 7;
+}
+.little-one {
+  grid-column: 4 / 6;
+  grid-row: 1 / 3;
+}
+.little-two {
+  grid-column: 4 / 6;
+  grid-row: 3 / 5;
+}
+.little-three {
+  grid-column: 4 / 6;
+  grid-row: 5 / 7;
+}
+.little-four {
+  grid-column: 4 / 6;
+  grid-row: 7 / 9;
+}

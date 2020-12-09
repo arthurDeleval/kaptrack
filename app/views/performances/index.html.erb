@@ -1,20 +1,18 @@
-<div class="container-index">
-  <h2>Oversee your success</h2>
-</div>
-  <div class="box">
-    <h1>CA & dishes performances by day</h1>
-
+  <div class="wrapper-graph">
+  <div class="one">
     <% revenue_array = []%>
     <% date_array = [] %>
     <% Performance.sevendate.each do|performance| %>
       <% revenue_array << performance.revenue.to_i %>
       <% date_array << performance.date %>
     <% end %>
-
-    <canvas id="revenue" width="600" height="200" data-performances="<%=revenue_array.to_json%>" data-date="<%= date_array.to_json %>"></canvas>
+    <div class="canva-graph">
+      <h1>CA & dishes performances by day</h1>
+     <canvas id="revenue" data-performances="<%=revenue_array.to_json%>" data-date="<%= date_array.to_json %>"></canvas>
+    </div>
   </div>
-  <% console %>
-
+  <div class="second">
+    
     <% margin_array = []%>
     <% margin_rate_array = []%>
     <% date_array = [] %>
@@ -23,21 +21,38 @@
       <% margin_rate_array << performance.margin_rate.to_i %>
       <% date_array << performance.date %>
     <% end %>
-
-  <div class="box">
-    <h1>Margin & rate margin by day</h1>
-    <canvas id="margins" width="600" height="200" data-globalmargin="<%= margin_array.to_json %>" data-ratemargin="<%= margin_rate_array.to_json %>" data-date="<%= date_array.to_json %>"></canvas>
+    <div class="canva-graph">
+      <h1>Margin & rate margin by day</h1>
+      <canvas id="margins" data-globalmargin="<%= margin_array.to_json %>" data-ratemargin="<%= margin_rate_array.to_json %>" data-date="<%= date_array.to_json %>"></canvas>
+    </div>
   </div>
-
-  
+  <div class="third">
     <% average_ticket_array = []%>
     <% date_array = [] %>
     <% Performance.sevendate.each do|performance| %>
       <% average_ticket_array << performance.average_ticket.to_i %>
       <% date_array << performance.date %>
     <% end %>
-
-  <div class="box">
-    <h1>Average ticket by day</h1>
-    <canvas id="average-ticket" width="600" height="200" data-averageticket="<%= average_ticket_array.to_json %>" data-date="<%= date_array.to_json %>"></canvas>
+    <div class="canva-graph">
+      <h1>Average ticket by day</h1>
+      <canvas id="average-ticket" data-averageticket="<%= average_ticket_array.to_json %>" data-date="<%= date_array.to_json %>"></canvas>
+    </div>
   </div>
+  <div class="little-one">
+  </div>
+  <div class="little-two">
+  </div>
+  <div class="little-three">
+  </div>
+  <div class="little-four">
+  </div>
+</div>
+  <div class="box">
+  </div>
+  <% console %>
+
+
+
+  
+
+
