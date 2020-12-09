@@ -15,7 +15,7 @@ const initMarginChart = () => {
           label: 'Global margin',
           data: globalMargin,
           order: 2,
-          backgroundColor: 'rgba(35, 212, 214, .5)',
+          backgroundColor: 'rgba(263, 164, 172, .7)',
           borderWidth: 0
         }, {
           label: 'Margin Rate (%)',
@@ -23,7 +23,7 @@ const initMarginChart = () => {
           order: 1,
           backgroundColor: 'transparent',
           borderWidth: 5,
-          borderColor: 'rgba(263, 164, 172, .7)',
+          borderColor: 'rgba(35, 212, 214, .5)',
           type: 'line'
         }],
       },

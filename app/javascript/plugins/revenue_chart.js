@@ -16,7 +16,6 @@ const initRevenueChart = () => {
             label: 'Revenue',
             data: perf,
             backgroundColor: '#4BC0C0',
-            borderColor: '#F8C3A7',
             borderWidth: 2
           },
         ]
