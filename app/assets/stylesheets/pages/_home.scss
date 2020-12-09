@@ -51,10 +51,9 @@ h1 {
 }
 
 .card-prod img{
-  height: 200px;
+  height: 170px;
   width: 140px;
   object-fit: cover;
-  padding:15px 0px;
   border-radius:2px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -80,7 +79,6 @@ h1 {
 }
 
 .card-prod a {
-  height: 200px;
   width: 140px;
 }
 .card-prod-infos {
@@ -118,6 +116,14 @@ h1 {
 
 
 .card-infos-other {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  width: 53%;
+}
+
+.card-infos-stock {
   padding: 0px;
   display: flex;
   justify-content: space-between;
@@ -327,8 +333,10 @@ h1 {
 
 .card-prod-menu{
   position: absolute;
-  top: 22px;
-  left: 10px;
+  top: 139px;
+  right: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-li {

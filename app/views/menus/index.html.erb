@@ -1,26 +1,23 @@
 <div class="container-index">
   <% @recipes.each do |recipe| %>
+  <% if recipe.menu_visible? %>
     <div class="card-prod">
-      <%= link_to recipe_path(recipe) do%>
       <% if recipe.photo.attached? %>
       <%= cl_image_tag recipe.photo.key %>
       <% end %>
         <div class="card-prod-infos">
         <h2><%= recipe.name %></h2>
-          <div class="card-infos">
-            <div class="card-infos-number">
-              <p><i class="fas fa-money-bill-wave-alt"></i> Price <%= recipe.price %>€</p>
-              <p><i class="fas fa-coins"></i> Cost <%= recipe.cost %>€</p>
-              <p><i class="fas fa-chart-line"></i> Margin: %</p>
-            </div>
-            <div class="card-infos-other">
-              <p><%= recipe.specificity %></p>
-              <p><%= recipe.preparation_time %></p>
-              <p><i class="far fa-clock"></i> <%= recipe.preparation_time %> min</p>
-            </div>
+        <div class="card-infos">
+          <div class="card-infos-number">
+            <p><i class="fas fa-money-bill-wave-alt"></i> Price <%= recipe.price %>€</p>
+            <p><%= recipe.specificity %></p>
           </div>
-        <% end %>
+          <div class="card-infos-other">
+            <p><%= recipe.meal_description %></p>
+          </div>
+        </div>
       </div>
     </div>
+  <% end %>
   <% end %>
 </div>

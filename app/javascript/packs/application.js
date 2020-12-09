@@ -45,7 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   displayDish();
   displayRecipeProductLine();
   flatpickrFonction();
-  // marginsChart();
-  // revenueFunction();
   submitForm();
 });
