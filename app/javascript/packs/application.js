@@ -28,7 +28,8 @@ import "bootstrap";
 import 'flag-icon-css/css/flag-icon.css'
 import { flatpickrFonction } from '../plugins/flatpickr';
 import { revenueFunction } from '../plugins/revenue_chart';
-
+import { marginsChart } from '../plugins/margins_chart';
+import { averageTicketChart } from '../plugins/average_ticket_by_day';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -40,9 +41,9 @@ import {submitForm} from "./submit_form";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // averageTicketChart();
   displayDish();
   displayRecipeProductLine();
   flatpickrFonction();
-  //revenueFunction();
   submitForm();
 });
