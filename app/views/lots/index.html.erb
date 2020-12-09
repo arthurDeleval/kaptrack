@@ -18,14 +18,14 @@
         <h2><%= lot.product.name %></h2>
         <div class="card-infos">
           <div class="card-infos-number">
-            <p>Quantity: <%= lot.quantity %></p>
+            <p><strong>Quantity:</strong> <%= lot.quantity %></p>
             <p>Cost: <%= lot.cost %>€</p>
           </div>
           <div class="card-infos-stock">
-            <p>Expiration date: <%= lot.expiration_date %></p>
+            <p><strong>Expiration date:</strong> <%= lot.expiration_date %></p>
           </div>
           <div class="card-infos-stock">
-            <p>Supplier:<%= lot.supplier.name %></p>
+            <p><strong>Supplier:</strong><%= lot.supplier.name %></p>
           </div>
         </div>
       </div>

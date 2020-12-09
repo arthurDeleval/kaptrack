@@ -95,6 +95,7 @@ h1 {
 }
 
 .card-infos {
+  overflow: scroll;
   display: flex;
   flex-direction:column;
   padding: 0px;
@@ -172,8 +173,8 @@ h1 {
 }
 
 .card-prod-show img {
-  height: 440px;
-  width: 30%;
+  height: 100%;
+  width: 50%;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 2px;
@@ -276,6 +277,7 @@ h1 {
       color: white;
       font-weight: 300;
       margin: 8px;
+      cursor: pointer;
     }
 }
 
@@ -343,3 +345,30 @@ h1 {
   border-bottom: 2px solid white;
 }
 
+.card-photo{
+    height: 170px;
+    width: 100%;
+}
+
+.card-photo img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-photo-show {
+    height: 440px;
+    width: 100%;
+}
+
+.card-photo-show img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
