@@ -58,6 +58,20 @@ li {
 }
 
 
+.menu-navbar {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 60px;
+  h1 {
+    font-weight: 600;
+  }
+}
+
+.menu {
+  border-bottom: 1px solid black;
+}
 
 
 

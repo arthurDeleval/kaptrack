@@ -38,3 +38,29 @@
   width: 455px;
   height: 500px;
 }
+
+.banner-menu {
+  background-image: url(https://images.unsplash.com/photo-1503220178855-e31ec372b8ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80);
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items:center;
+  justify-content: left;
+}
+
+.banner-menu-description {
+  font-family: 'Open Sans', sans-serif;
+    h1 {
+      color: white;
+      padding-left : 40px;
+    }
+}
+
+.menu_meal_desc {
+  height: 50px;
+}
+
+
+
+

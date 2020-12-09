@@ -9,20 +9,21 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <% unless params[:controller] == 'pages' %>
+    <% unless params[:controller] == 'pages' || params[:controller] == 'menus' %>
     <div class="d-flex">
     <% end %>
       <%= render 'shared/sidebar' %>
       <div class="d-flex flex-column">
         <%= yield %>
       </div>
-    <% unless params[:controller] == 'pages' %>
+    <% unless params[:controller] == 'pages' || params[:controller] == 'menus' %>
     </div>
     <% end %>
   </body>
