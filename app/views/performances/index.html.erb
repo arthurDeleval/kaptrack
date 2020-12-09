@@ -1,3 +1,26 @@
-<div class="container">
+<div class="container-index">
   <h2>Oversee your success</h2>
 </div>
+  <div class="box">
+    <h1>CA & dishes performances by day</h1>
+
+    <% revenue_array = []%>
+    <% date_array = [] %>
+    <% Performance.all.each do|performance| %>
+      <% revenue_array << performance.revenue.to_i %>
+      <% date_array << performance.date %>
+    <% end %>
+
+    <canvas id="revenue" width="600" height="200" data-performances="<%=revenue_array.to_json%>" data-date="<%= date_array %>"></canvas>
+  </div>
+  <% console %> 
+
+  <div class="box">
+    <h1>Margin & rate margin by day</h1>
+    <canvas id="margins" width="600" height="200"></canvas>
+  </div>
+
+  <div class="box">
+    <h1>Average ticket by day</h1>
+    <canvas id="average-ticket" width="600" height="200"></canvas>
+  </div>
