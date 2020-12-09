@@ -7,7 +7,7 @@ class Performance < ApplicationRecord
 
   def revenue
     result = 0
-    self.customer_consumptions.each do |cons|
+    customer_consumptions.each do |cons|
       result += cons.quantity * cons.recipe.price
     end
     result
@@ -44,5 +44,9 @@ class Performance < ApplicationRecord
 
   def top_dish_sold
     customer_consumptions.order(quantity: :desc).take(3)
+  end
+
+  def self.sevendate
+    self.order(date: :asc).last(7)
   end
 end
