@@ -9,16 +9,21 @@ class PerformancesController < ApplicationController
   end
 
   def create
-    @performance = Performance.new(performance_params)
+    @performance = Performance.find_by(date: params["performance"]["date"])
+    if @performance
+      @performance.attributes = performance_params
+    else
+      @performance = Performance.new(performance_params)
+    end
     authorize @performance
       if @performance.save
       redirect_to performances_path
     else
       render :new
     end
-    unless  params[:recipes].nil?
+    unless params[:recipes].nil?
       params[:recipes].each do |recipe|
-        CustomerConsumption.create(quantity: recipe[:quantity], recipe_id: recipe[:recipe_id],performance_id: @performance.id)
+        CustomerConsumption.create(quantity: recipe[:quantity], recipe_id: recipe[:recipe_id], performance_id: @performance.id)
       end
     end
   end
