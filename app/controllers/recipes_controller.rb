@@ -43,10 +43,22 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     authorize @recipe
-    if @recipe.update(recipe_params)
-      redirect_to recipes_path
-    else
-      render :edit
+    @products = params[:products]
+    @products.each do |product|
+      @product_recipe = ProductRecipe.find_by(recipe: @recipe, product_id: product[:product_id])
+        unless @product_recipe
+          @product_recipe = ProductRecipe.new
+        end
+        @product_recipe.recipe_quantity = product[:quantity].to_i
+        @product_recipe.unit = params[:product_recipes][0][:unit]
+        @product_recipe.product_id = product[:product_id]
+        @product_recipe.recipe = @recipe
+        @product_recipe.save!
+      if @recipe.update(recipe_params)
+        redirect_to recipes_path
+      else
+        render :edit
+      end
     end
   end
 
