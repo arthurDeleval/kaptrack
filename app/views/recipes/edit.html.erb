@@ -1,5 +1,5 @@
 <div class="box">
-<h1>Edit recipe</h1>
+<h1>Update a recipe</h1>
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :name, placeholder: 'Recipe name'%>
   <%= f.input :specificity, collection: Recipe::SPECIFICITIES, placeholder: 'Category : hot, cold, spicy ...' %>

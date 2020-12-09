@@ -34,7 +34,9 @@
       <% end %>
     </div>
     <% if @recipe.photo.attached? %>
+    <div class="card-photo-show">
       <%= cl_image_tag @recipe.photo.key%>
+    </div>
     <% end %>
     <div class="card-product-infos-1">
       <div class="card-product-container">
