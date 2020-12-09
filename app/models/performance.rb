@@ -49,4 +49,5 @@ class Performance < ApplicationRecord
   def self.sevendate
     self.order(date: :asc).last(7)
   end
+
 end

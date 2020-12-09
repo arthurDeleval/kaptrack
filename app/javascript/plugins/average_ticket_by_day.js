@@ -15,7 +15,7 @@ const initAverageTicketChart = () => {
           {
             label: 'Average ticket',
             data: averageTicket,
-            backgroundColor: 'transparent',
+            backgroundColor: '#34D399',
             borderColor: '#34D399',
             pointBackgroundColor: '#F3A4AC',
             pointBorderColor: 'circle',
