@@ -1,23 +1,27 @@
-<div class="container-index">
-  <% @recipes.each do |recipe| %>
-  <% if recipe.menu_visible? %>
-    <div class="card-prod">
-      <% if recipe.photo.attached? %>
-      <%= cl_image_tag recipe.photo.key %>
-      <% end %>
-        <div class="card-prod-infos">
-        <h2><%= recipe.name %></h2>
-        <div class="card-infos">
-          <div class="card-infos-number">
-            <p><i class="fas fa-money-bill-wave-alt"></i> Price <%= recipe.price %>€</p>
-            <p><%= recipe.specificity %></p>
+<div class="menu-navbar transparent">
+  <div class="menu">Menu</div>
+</div>
+<div class="banner-menu">
+  <div class="banner-menu-description">
+    <h1>Take a look at our menu !</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="cards-menus-grid">
+    <% @recipes.each do |recipe|  %>
+      <div class="card-trip">
+        <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key %>
+          <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2> <%= recipe.name %></h2>
+            <p> <%= recipe.specificity%></p>
+            <p class="menu_meal_desc"> <%= recipe.meal_description %> </p>
           </div>
-          <div class="card-infos-other">
-            <p><%= recipe.meal_description %></p>
-          </div>
+          <h2 class="card-trip-pricing"> <%= recipe.price %> E</h2>
         </div>
       </div>
-    </div>
-  <% end %>
-  <% end %>
+    <% end %>
+  </div>
 </div>

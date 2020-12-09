@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top <%= 'd-none' if params[:controller] == 'pages' %>">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top <%= 'd-none' if params[:controller] == 'pages' %> <%= 'd-none' if params[:controller] == 'menus' %>">
    <div class="navbar-logo">
       <%= image_tag "kaptrackLogo.png", alt: "Logo kap track", width: 200, height: 30 %>
     </div>
@@ -21,7 +21,7 @@
         <li class="nav-link <%= 'active' if current_page?(new_checklist_path) %>"><%= link_to "Add checklist", new_checklist_path %></li>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle <%= 'active' if current_page?(new_supplier_path) || current_page?(new_lot_path)%>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle <%= 'active' if current_page?(new_supplier_path) || current_page?(new_lot_path) || current_page?(new_product_path)%>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add a stock
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
