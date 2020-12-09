@@ -9,19 +9,23 @@
 <div class="container">
   <div class="cards-menus-grid">
     <% @recipes.each do |recipe|  %>
-      <div class="card-trip">
-        <% if recipe.photo.attached? %>
-            <%= cl_image_tag recipe.photo.key %>
-          <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2> <%= recipe.name %></h2>
-            <p> <%= recipe.specificity%></p>
-            <p class="menu_meal_desc"> <%= recipe.meal_description %> </p>
+      <% if recipe.menu_visible == true %>
+        <div class="card-trip">
+          <% if recipe.photo.attached? %>
+              <%= cl_image_tag recipe.photo.key %>
+            <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2> <%= recipe.name %></h2>
+              <p> <%= recipe.specificity%></p>
+              <p class="menu_meal_desc"> <%= recipe.meal_description %> </p>
+            </div>
+            <h2 class="card-trip-pricing"> <%= recipe.price %> E</h2>
           </div>
-          <h2 class="card-trip-pricing"> <%= recipe.price %> E</h2>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+<% console %>
