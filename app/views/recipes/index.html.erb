@@ -28,7 +28,7 @@
             <div class="card-infos-number">
               <p><i class="fas fa-money-bill-wave-alt"></i> <%= recipe.price %>€</p>
               <p><i class="fas fa-coins"></i> <%= recipe.cost %>€</p>
-              <p><i class="fas fa-chart-line"></i> <%= (((recipe.price - recipe.cost) / recipe.cost.to_f).round(2) * 100) %>%</p>
+              <p><i class="fas fa-chart-line"></i> <%= (((recipe.price - recipe.cost)/ recipe.cost.to_f).round(2) * 100) %>%</p>
             </div>
             <div class="card-infos-other">
               <% case recipe.specificity %>
