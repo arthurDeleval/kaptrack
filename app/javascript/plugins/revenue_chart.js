@@ -15,13 +15,15 @@ const initRevenueChart = () => {
           {
             label: 'Revenue',
             data: perf,
-            backgroundColor: '#F8C3A7',
-            borderColor: '#F8C3A7',
-            borderWidth: 1
+            backgroundColor: '#4BC0C0',
+            borderWidth: 2
           },
         ]
       },
       options: {
+        labels: {
+          fontColor: 'black'
+        },
         scales: {
           xAxes: [{
             stacked: true

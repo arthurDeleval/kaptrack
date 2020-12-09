@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   has_many :customer_consumptions
   has_many :product_recipes, dependent: :destroy
   has_many :products, through: :product_recipes
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :recipe_description, presence: true
   validates :price, presence: true
   validates :preparation_time, presence: true
