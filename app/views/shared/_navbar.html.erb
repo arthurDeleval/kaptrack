@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top <%= 'd-none' if params[:controller] == 'pages' %>">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top <%= 'd-none' if params[:controller] == 'pages' %> <%= 'd-none' if params[:controller] == 'menus' %>">
    <div class="navbar-logo">
       <%= image_tag "kaptrackLogo.png", alt: "Logo kap track", width: 200, height: 30 %>
     </div>
@@ -23,6 +23,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle <%= 'active' if current_page?(new_supplier_path) || current_page?(new_lot_path)%>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add an item
+
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "Add a stock", new_lot_path, class: "dropdown-item" %>
