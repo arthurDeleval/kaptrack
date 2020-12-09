@@ -41,11 +41,11 @@ import {submitForm} from "./submit_form";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  averageTicketChart();
+  // averageTicketChart();
   displayDish();
   displayRecipeProductLine();
   flatpickrFonction();
-  marginsChart();
-  revenueFunction();
+  // marginsChart();
+  // revenueFunction();
   submitForm();
 });
