@@ -46,12 +46,12 @@
         <div class="card-show-infos-1">
           <h2><i class="fas fa-money-bill-wave-alt"></i> Price : <%= @recipe.price %>€</h2>
           <h2><i class="fas fa-coins"></i> Cost : <%= @recipe.cost %>€</h2>
-          <h2><i class="fas fa-chart-line"></i> Margin : %</h2>
+          <h2><i class="fas fa-chart-line"></i> Margin : <%= (((@recipe.price - @recipe.cost)/ @recipe.cost.to_f).round(2) * 100) %>%</h2>
           <% case @recipe.specificity %>
             <% when "spicy" %>
               <h2><i class="fas fa-pepper-hot"></i></h2>
             <% when "very spicy" %>
-              <h2><i class="fas fa-pepper-hot"> * 2 </i></h2>
+              <h2><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h2>
             <% when "healthy" %>
               <h2><i class="fas fa-heartbeat"></i></h2>
             <% when "veggie" %>
@@ -71,7 +71,7 @@
         <li>
           <%= product_recipe.product.name %>
           <%= product_recipe.recipe_quantity %>
-          <%= product_recipe.product.measure_unit %>
+          <%= product_recipe.unit %>
         </li>
         <% end %>
         </ul>

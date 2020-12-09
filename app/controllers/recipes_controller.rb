@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
       @products.each do |product|
         @product_recipe = ProductRecipe.new
         @product_recipe.recipe_quantity = product[:quantity].to_i
+        @product_recipe.unit = params[:product_recipes][0][:unit]
         @product_recipe.product_id = product[:product_id]
         @product_recipe.recipe = @recipe
         @product_recipe.save!
