@@ -18,22 +18,44 @@
     </div>
   </div>
   <div class="little-one">
-    <h5>Revenue (weekly)</h5>
-     <%= @weekly_revenue %>€
+    <div class="little-graph-title">
+      <div><h5>Revenue(weekly)</h5></div>
+    </div>
+    <div class="little-graph-items">
+      <div>Image</div>
+      <div><%= @weekly_revenue %>€</div>
+    </div>
   </div>
   <div class="little-two">
-    <h5>Number of customer (weekly)</h5>
-    <%= @weekly_customer %>
+    <div class="little-graph-title">
+      <div><h5>Number of customer(weekly)</h5></div>
+    </div>
+    <div class="little-graph-items">
+      <div>Image</div>
+      <div><%= @weekly_customer %></div>
+    </div>
   </div>
   <div class="little-three">
-    <h5>Top 3 dishes sold (weekly)</h5>
-    <% @weekly_dishes.each do |name, quantity|%>
-      <%= "Quantity :#{quantity} - Name :#{name}" %>
-    <% end %>
+    <div class="little-graph-title">
+      <div><h5>Top 3 dishes sold(weekly)</h5></div>
+    </div>
+    <div class="little-graph-items">
+      <div>Image</div>
+      <div>
+      <% @weekly_dishes.each do |name, quantity|%>
+        <%= "Quantity :#{quantity} - Name :#{name}" %>
+      <% end %>
+      </div>
+    </div>
   </div>
   <div class="little-four">
-    <h5>Average revenue by server(weekly)</h5>
-    <%= @weekly_average_server %>€
+    <div class="little-graph-title">
+      <div><h5>Average revenue by server(weekly)</h5></div>
+    </div>
+    <div class="little-graph-items-four">
+      <div>Image</div>
+      <div><%= @weekly_average_server %>€</div>
+    </div>
   </div>
 </div>
 
