@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :customer_consumptions
+  has_many :customer_consumptions, dependent: :destroy
   has_many :product_recipes, dependent: :destroy
   has_many :products, through: :product_recipes
   validates :name, presence: true, uniqueness: true

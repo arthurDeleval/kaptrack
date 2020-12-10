@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     authorize @recipe
     @recipe.user = current_user
     @products = params[:products]
-    if @recipe.save!
+    if @recipe.save
       @products.each do |product|
         @product_recipe = ProductRecipe.new
         @product_recipe.recipe_quantity = product[:quantity].to_i
