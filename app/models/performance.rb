@@ -82,7 +82,7 @@ class Performance < ApplicationRecord
     customer_consumptions.order(quantity: :desc).take(3)
   end
 
-  def self.top_3_weekdish_name
+  def self.top_3_weekdish
     result = Hash.new(0)
     get_current_week.each do |performance|
       performance.customer_consumptions.each do |customer_consumption|
