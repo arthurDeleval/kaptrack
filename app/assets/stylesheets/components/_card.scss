@@ -223,7 +223,21 @@
   height: 50px;
 }
 
+.card-trip-title{
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  width: 100%;
 
+    h2{
+  height: 50%;
+  width: 50%;
+  }
+    p{
+  height: 50%;
+  width: 50%;
+  }
+}
 
 
 

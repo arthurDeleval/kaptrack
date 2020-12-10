@@ -18,8 +18,27 @@
             <% end %>
           <div class="card-trip-infos">
             <div>
+              <div class="card-trip-title">
               <h2> <%= recipe.name %></h2>
-              <p> <%= recipe.specificity%></p>
+              <% case recipe.specificity %>
+                <% when "Spicy" %>
+                  <p><i class="fas fa-pepper-hot"></i></p>
+                <% when "Very spicy" %>
+                  <p><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></p>
+                <% when "Very very spicy" %>
+                  <p><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></p>
+                <% when "Fat" %>
+                  <p><i class="fas fa-weight-hanging"></i></p>
+                <% when "Lacto-ovo" %>
+                  <p><i class="fas fa-egg"></i></p>
+                <% when "Vegan" %>
+                  <p><i class="fas fa-carrot"></i></p>
+                <% when "Sweet" %>
+                  <p><i class="fas fa-cookie-bite"></i></p>
+                <% else %>
+                <p></p>
+              <% end %>
+              </div>
               <p class="menu_meal_desc"> <%= recipe.meal_description %> </p>
             </div>
             <h2 class="card-trip-pricing"> <%= recipe.price %> € </h2>
