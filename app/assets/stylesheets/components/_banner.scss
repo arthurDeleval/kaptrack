@@ -44,13 +44,13 @@
   height: 70vh;
   background-position: center;
   background-size: cover;
-  display: flex;
   align-items:center;
   justify-content: left;
 }
 
 .banner-menu-description {
   font-family: 'Open Sans', sans-serif;
+  text-align:center;
     span {
       color: white;
       font-size: 24px;

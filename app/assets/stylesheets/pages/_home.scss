@@ -376,8 +376,11 @@ h1 {
 }
 
 .logo{
+  display:flex;
+  justify-content: center;
+  align-items:center;
   height: 300px;
   width: 200px;
-  margin-left: 610px;
+  margin: 0 auto;
 }
 
