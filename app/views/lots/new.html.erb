@@ -3,7 +3,7 @@
   <%= simple_form_for(@lot) do |f| %>
     <%= f.association :product %>
     <%= f.association :supplier %>
-    <%= f.input :expiration_date, as: :string, :label=>"Expiration date", required: false %>
+    <%= f.input :expiration_date, as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.input :cost %>
     <%= f.input :quantity %>
     <%= f.input :photo, as: :file %>
