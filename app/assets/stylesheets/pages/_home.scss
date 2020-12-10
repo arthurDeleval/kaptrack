@@ -341,10 +341,6 @@ h1 {
   justify-content: center;
 }
 
-.home-li {
-  border-bottom: 2px solid white;
-}
-
 .card-photo{
     height: 170px;
     width: 100%;
@@ -372,3 +368,10 @@ h1 {
     border-radius: 2px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
+.ingredients ul{
+  padding: 15px;
+  list-style-type: circle;
+  margin:0px;
+}
+
