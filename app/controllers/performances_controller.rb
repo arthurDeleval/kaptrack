@@ -21,6 +21,12 @@ class PerformancesController < ApplicationController
       @average_ticket_array << performance.average_ticket.to_i
       @date_array << performance.date
     end
+    @weekly_revenue = Performance.revenue_week
+    @weekly_customer = Performance.customer_week
+    @weekly_average_server = Performance.weekly_avrevenue_server
+
+      @weekly_dishes = Performance.top_3_weekdish
+ 
   end
 
   def new
