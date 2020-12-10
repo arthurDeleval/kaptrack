@@ -1,4 +1,4 @@
-class LotPolicy < ApplicationPolicy
+class MenuPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
