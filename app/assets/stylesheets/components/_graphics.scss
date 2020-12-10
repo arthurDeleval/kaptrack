@@ -71,3 +71,28 @@ height: 100%;
     padding: 10px 0px 0px 10px;
   }
 }
+
+.little-graph-title {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+    h5 {
+      font-size:14px;
+    }
+}
+
+.little-graph-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 87%;
+}
+
+
+
+.little-graph-items-four {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80%;
+}
