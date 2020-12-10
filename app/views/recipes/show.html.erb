@@ -48,35 +48,39 @@
         <div class="card-show-infos-1">
           <h2><i class="fas fa-money-bill-wave-alt"></i> Price : <%= @recipe.price %>€</h2>
           <h2><i class="fas fa-coins"></i> Cost : <%= @recipe.cost %>€</h2>
-          <h2><i class="fas fa-chart-line"></i> Margin : <%= (((recipe.price - recipe.cost)/ recipe.cost.to_f).round(2) * 100) %>%</h2>
+          <h2><i class="fas fa-chart-line"></i> Margin : <%= (((@recipe.price - @recipe.cost)/ @recipe.cost.to_f).round(2) * 100) %>%</h2>
           <% case @recipe.specificity %>
-            <% when "spicy" %>
+            <% when "Spicy" %>
               <h2><i class="fas fa-pepper-hot"></i></h2>
-            <% when "very spicy" %>
+            <% when "Very spicy" %>
               <h2><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h2>
-            <% when "healthy" %>
-              <h2><i class="fas fa-heartbeat"></i></h2>
-            <% when "veggie" %>
+            <% when "Very very spicy" %>
+              <h2><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h2>
+            <% when "Fat" %>
+              <h2><i class="fas fa-weight-hanging"></i></h2>
+            <% when "Lacto-ovo" %>
+              <h2><i class="fas fa-egg"></i></h2>
+              <% when "Vegan" %>
               <h2><i class="fas fa-carrot"></i></h2>
-            <% when "sweet" %>
+            <% when "Sweet" %>
               <h2><i class="fas fa-cookie-bite"></i></h2>
             <% else %>
               <h2>no specificity</p>
           <% end %>
           <h2><i class="far fa-clock"></i> <%= @recipe.preparation_time %> min</h2>
         </div>
-        <div>
-          <br>
+        <div class="ingredients">
+        <br>
         <h2><i class="fas fa-shopping-cart"></i> Ingredients</h2>
-        <ul>
-        <% @recipe.product_recipes.each do |product_recipe| %>
-        <li>
-          <%= product_recipe.product.name %>
-          <%= product_recipe.recipe_quantity %>
-          <%= product_recipe.unit %>
-        </li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @recipe.product_recipes.each do |product_recipe| %>
+            <li>
+              <%= product_recipe.product.name %>
+              <%= product_recipe.recipe_quantity %>
+              <%= product_recipe.unit %>
+            </li>
+          <% end %>
+          </ul>
         </div>
         <div class="card-show-description">
           <br>

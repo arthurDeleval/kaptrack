@@ -2,7 +2,7 @@
 <h1>Update a recipe</h1>
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :name, placeholder: 'Recipe name'%>
-  <%= f.input :specificity, collection: Recipe::SPECIFICITIES, placeholder: 'Category : hot, cold, spicy ...' %>
+  <%= f.input :specificity, collection: Recipe::SPECIFICITIES, placeholder: 'Spicy, Veggie ...' %>
   <%= f.input :recipe_description, as: :text, placeholder:"Write here all the steps of your recipe" %>
   <%= f.input :meal_description, as: :text, placeholder:"Write a description or the story of your recipe (it will appear on the menu!)" %>
   <%= f.input :preparation_time, placeholder: 'In min for the cooker' %>

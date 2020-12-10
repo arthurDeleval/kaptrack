@@ -18,5 +18,5 @@ class Recipe < ApplicationRecord
 
   has_one_attached :photo
 
-  SPECIFICITIES = ["spicy", "very spicy", "fat", "healthy", "veggie", "sweet"]
+  SPECIFICITIES = ["Spicy", "Very spicy", "Very very spicy", "Fat", "Lacto-ovo", "Vegan", "Sweet"]
 end

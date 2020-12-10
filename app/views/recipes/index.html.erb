@@ -33,21 +33,25 @@
               <p><i class="fas fa-chart-line"></i> <%= (((recipe.price - recipe.cost)/ recipe.cost.to_f).round(2) * 100) %>%</p>
             </div>
             <div class="card-infos-other">
-              <% case recipe.specificity %>
-              <% when "spicy" %>
-                <p><i class="fas fa-pepper-hot"></i></p>
-              <% when "very spicy" %>
-                <p><i class="fas fa-pepper-hot" ></i><i class="fas fa-pepper-hot" ></i></p>
-              <% when "healthy" %>
-                <p><i class="fas fa-heartbeat"></i></p>
-              <% when "veggie" %>
-                <p><i class="fas fa-carrot"></i></p>
-              <% when "sweet" %>
-                <p><i class="fas fa-cookie-bite"></i></p>
-              <% else %>
-                <p>no specificity</p>
-              <% end %>
               <p><i class="far fa-clock"></i> <%= recipe.preparation_time %> min</p>
+              <% case recipe.specificity %>
+                <% when "Spicy" %>
+                  <p><i class="fas fa-pepper-hot"></i></p>
+                <% when "Very spicy" %>
+                  <p><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></p>
+                <% when "Very very spicy" %>
+                  <p><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></p>
+                <% when "Fat" %>
+                  <p><i class="fas fa-weight-hanging"></i></p>
+                <% when "Lacto-ovo" %>
+                  <p><i class="fas fa-egg"></i></p>
+                <% when "Vegan" %>
+                  <p><i class="fas fa-carrot"></i></p>
+                <% when "Sweet" %>
+                  <p><i class="fas fa-cookie-bite"></i></p>
+                <% else %>
+                <p></p>
+              <% end %>
           </div>
           </div>
         <% end %>
