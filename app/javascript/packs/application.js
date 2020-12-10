@@ -36,6 +36,8 @@ import { initAverageTicketChart } from '../plugins/average_ticket_by_day';
 import {displayRecipeProductLine} from "./display_recipe_product_line";
 import {displayDish} from "./display_new_dish_performance";
 import {submitForm} from "./submit_form";
+import {loadDynamicBannerText} from '../components/banner';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -47,4 +49,5 @@ document.addEventListener('turbolinks:load', () => {
   initMarginChart();
   initRevenueChart();
   submitForm();
+  loadDynamicBannerText();
 });
