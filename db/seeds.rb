@@ -61,13 +61,13 @@ Checklist.create!(title: "Faire la tondeuse", description: "now")
 puts "#{Checklist.count} created"
 
 puts 'Creating performances...'
-monday = Performance.create(customer_number: 35, date: "03/12/2020", server_number: 4)
-tuesday = Performance.create(customer_number: 55, date: "04/12/2020", server_number: 6)
-wednesday = Performance.create(customer_number: 27, date: "05/12/2020", server_number: 3)
-thursday = Performance.create(customer_number: 80, date: "06/12/2020", server_number: 8)
-friday = Performance.create(customer_number: 25, date: "07/12/2020", server_number: 3)
-saturd = Performance.create(customer_number: 72, date: "08/12/2020", server_number: 7)
-sunday = Performance.create(customer_number: 97, date: "09/12/2020", server_number: 10)
+monday = Performance.create(customer_number: 35, date: 7.day.ago, server_number: 4)
+tuesday = Performance.create(customer_number: 55, date: 6.day.ago, server_number: 6)
+wednesday = Performance.create(customer_number: 27, date: 5.day.ago, server_number: 3)
+thursday = Performance.create(customer_number: 80, date: 4.day.ago, server_number: 8)
+friday = Performance.create(customer_number: 25, date: 3.day.ago, server_number: 3)
+saturd = Performance.create(customer_number: 72, date: 2.day.ago, server_number: 7)
+sunday = Performance.create(customer_number: 97, date: 1.day.ago, server_number: 10)
 puts "performances created"
 
 puts 'Creating customer cons...'

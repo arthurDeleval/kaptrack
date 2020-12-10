@@ -2,24 +2,25 @@
   <div class="one">
     <div class="canva-graph">
       <h1>CA & dishes performances by day</h1>
-     <canvas id="revenue" data-performances="<%=@revenue_array.to_json%>" data-date="<%= @date_array.to_json %>" style="display: block; height: 100%; width: 100%;"></canvas>
+     <canvas id="revenue" data-performances="<%=@revenue_array.to_json%>" data-date="<%= @date_array.map{|date| date.strftime("%d/%m")}.to_json %>" style="display: block; height: 100%; width: 100%;"></canvas>
+      <%= @date_array %>
     </div>
   </div>
   <div class="second">
     <div class="canva-graph">
       <h1>Margin & rate margin by day</h1>
-      <canvas id="margins" data-globalmargin="<%= @margin_array.to_json %>" data-ratemargin="<%= @margin_rate_array.to_json %>" data-date="<%= @date_array.to_json %>" style="display: block; height: 100%; width: 100%;"></canvas>
+      <canvas id="margins" data-globalmargin="<%= @margin_array.to_json %>" data-ratemargin="<%= @margin_rate_array.to_json %>" data-date="<%= @date_array.map{|date| date.strftime("%d/%m")}.to_json %>" style="display: block; height: 100%; width: 100%;"></canvas>
     </div>
   </div>
   <div class="third">
     <div class="canva-graph">
       <h1>Average ticket by day</h1>
-      <canvas id="average-ticket" data-averageticket="<%= @average_ticket_array.to_json %>" data-date="<%= @date_array.to_json %>" style="display: block; height: 100%; width: 100%;"></canvas>
+      <canvas id="average-ticket" data-averageticket="<%= @average_ticket_array.to_json %>" data-date="<%= @date_array.map{|date| date.strftime("%d/%m")}.to_json %>" style="display: block; height: 100%; width: 100%;"></canvas>
     </div>
   </div>
   <div class="little-one">
     <div class="little-graph-title">
-      <div><h5>Revenue(weekly)</h5></div>
+      <div><h4>Income of the current week</h4></div>
     </div>
     <div class="little-graph-items">
       <div>Image</div>
@@ -28,7 +29,7 @@
   </div>
   <div class="little-two">
     <div class="little-graph-title">
-      <div><h5>Number of customer(weekly)</h5></div>
+      <div><h4>Number of clients on the current week</h4></div>
     </div>
     <div class="little-graph-items">
       <div>Image</div>
@@ -37,7 +38,7 @@
   </div>
   <div class="little-three">
     <div class="little-graph-title">
-      <div><h5>Top 3 dishes sold(weekly)</h5></div>
+      <div><h4>Top 3 dishes sold on the current week</h4></div>
     </div>
     <div class="little-graph-items">
       <div>Image</div>
@@ -50,7 +51,7 @@
   </div>
   <div class="little-four">
     <div class="little-graph-title">
-      <div><h5>Average revenue by server(weekly)</h5></div>
+      <div><h4>Average revenue by server on the current week</h4></div>
     </div>
     <div class="little-graph-items-four">
       <div>Image</div>

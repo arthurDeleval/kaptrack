@@ -3,14 +3,14 @@ class PerformancesController < ApplicationController
     @performances = policy_scope(Performance).order(created_at: :desc)
     @revenue_array = []
     @date_array = []
-    Performance.sevendate.each do|performance|
+    Performance.sevendate.each do |performance|
       @revenue_array << performance.revenue.to_i
       @date_array << performance.date
     end
     @margin_array = []
     @margin_rate_array = []
     @date_array = []
-    Performance.sevendate.each do|performance|
+    Performance.sevendate.each do |performance|
       @margin_array << performance.global_margin.to_i
       @margin_rate_array << performance.margin_rate.to_i
       @date_array << performance.date
