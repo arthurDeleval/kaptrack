@@ -129,7 +129,7 @@ h1 {
     span {
       margin-left: 10px;
   }
-      
+}
 .card-infos-number-1 {
   padding: 0px;
   display: flex;
@@ -400,16 +400,16 @@ h1 {
   margin:0px;
 }
 
-.logo{
+.tricherie {
+ font-family: 'Open Sans', sans-serif;
+ color: #404E67;
+}
+
+.logo {
   display:flex;
   justify-content: center;
   align-items:center;
   height: 300px;
   width: 200px;
   margin: 0 auto;
-}
-
-.tricherie {
- font-family: 'Open Sans', sans-serif;
- color: #404E67;
 }
