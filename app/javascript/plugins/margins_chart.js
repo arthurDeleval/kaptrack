@@ -12,13 +12,13 @@ const initMarginChart = () => {
       data: {
         labels: date,
         datasets: [{
-          label: 'Global margin',
+          label: 'Global margin(€)',
           data: globalMargin,
           order: 2,
           backgroundColor: 'rgba(263, 164, 172, .7)',
           borderWidth: 0
         }, {
-          label: 'Margin Rate (%)',
+          label: 'Margin Rate(%)',
           data: rateMargin,
           order: 1,
           backgroundColor: 'transparent',
@@ -27,6 +27,25 @@ const initMarginChart = () => {
           type: 'line'
         }],
       },
+      options: {
+        labels: {
+          fontColor: 'black'
+        },
+        scales: {
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              display:false
+            }
+          }],
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              display:false
+            }  
+          }]
+        }
+      }
     });
   }
 }
