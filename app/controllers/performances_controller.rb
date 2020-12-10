@@ -24,9 +24,8 @@ class PerformancesController < ApplicationController
     @weekly_revenue = Performance.revenue_week
     @weekly_customer = Performance.customer_week
     @weekly_average_server = Performance.weekly_avrevenue_server
+    @weekly_dishes = Performance.top_3_weekdish
 
-      @weekly_dishes = Performance.top_3_weekdish
- 
   end
 
   def new
