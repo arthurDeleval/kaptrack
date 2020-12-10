@@ -52,11 +52,13 @@
 
 .banner-menu-description {
   font-family: 'Open Sans', sans-serif;
-    h1 {
+    span {
       color: white;
-      padding-left : 40px;
+      font-size: 24px;
     }
 }
 
-
+.animated-banner {
+  padding-left: 40px;
+}
 
