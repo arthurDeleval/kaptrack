@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :phone_number %>
-    <%= f.input  :delivery_estimation, as: :string, required: false, input_html: {class: "datepicker"}, placeholder:"Indicate a specific date" %>
+    <%= f.input  :delivery_estimation %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit %>
   <% end %>

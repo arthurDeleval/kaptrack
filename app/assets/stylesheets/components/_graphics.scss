@@ -86,7 +86,7 @@ height: 100%;
 .little-graph-items {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 87%;
   .icon {
     font-size: 40px;
@@ -98,7 +98,7 @@ height: 100%;
 .little-graph-items-four {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 80%;
 }
 
@@ -114,4 +114,9 @@ height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-style: bold;
   margin-left: 10px;
+}
+
+.titre-h6 {
+  font-size: 36px;
+  font-family: 'Open Sans', sans-serif;
 }
