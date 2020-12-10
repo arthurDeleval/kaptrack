@@ -98,10 +98,17 @@ height: 100%;
 .little-graph-items-four {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 80%;
 }
 
+.little-four-img {
+  margin-right: 10px;
+}
+
+.little-three-img {
+  margin-right: 10px;
+}
 .revenue-text h6 {
   font-size: 36px;
   font-family: 'Open Sans', sans-serif;
