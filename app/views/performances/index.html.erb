@@ -20,41 +20,41 @@
   </div>
   <div class="little-one">
     <div class="little-graph-title">
-      <div><h4>Income of the current week</h4></div>
+      <div><h5>Income of the current week</h5></div>
     </div>
     <div class="little-graph-items">
-      <div>Image</div>
-      <div><%= @weekly_revenue %>€</div>
+      <div class="icon"><i class="fas fa-chart-line"></i></div>
+      <div class="revenue-text"><h6><%= @weekly_revenue %>€</h6></div>
     </div>
   </div>
   <div class="little-two">
     <div class="little-graph-title">
-      <div><h4>Number of clients on the current week</h4></div>
+      <div><h5>Number of clients</h5></div>
     </div>
     <div class="little-graph-items">
-      <div>Image</div>
-      <div><%= @weekly_customer %></div>
+      <div class="icon"><%= image_tag "clients.png", alt: "top dishes", width: 60, height: 60 %></div>
+      <div class="revenue-text"><h6><%= @weekly_customer %></h6></div>
     </div>
   </div>
   <div class="little-three">
     <div class="little-graph-title">
-      <div><h4>Top 3 dishes sold on the current week</h4></div>
+      <div><h5>Top 3 dishes sold</h5></div>
     </div>
     <div class="little-graph-items">
-      <div>Image</div>
+        <%= image_tag "lovedish.png", alt: "top dishes", width: 50, height: 50 %>
       <div>
       <% @weekly_dishes.each do |name, quantity|%>
-        <%= "Quantity :#{quantity} - Name :#{name}" %>
+        <%= "Quantity : #{quantity} - Name :#{name}" %>
       <% end %>
       </div>
     </div>
   </div>
   <div class="little-four">
     <div class="little-graph-title">
-      <div><h4>Average revenue by server on the current week</h4></div>
+      <div><h5>Average revenue by server</h5></div>
     </div>
     <div class="little-graph-items-four">
-      <div>Image</div>
+      <%= image_tag "food-serving.png", alt: "top dishes", width: 50, height: 50 %>
       <div><%= @weekly_average_server %>€</div>
     </div>
   </div>
