@@ -110,9 +110,12 @@ h1 {
 .card-infos-number {
   padding: 0px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 50%;
   width: 100%;
+    span {
+      margin-left: 21px;
+    }
 }
 
 
