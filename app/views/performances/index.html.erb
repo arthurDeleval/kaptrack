@@ -41,11 +41,11 @@
       <div><h5>Top 3 dishes sold</h5></div>
     </div>
     <div class="little-graph-items">
-        <%= image_tag "lovedish.png", alt: "top dishes", width: 50, height: 50 %>
+      <div class="little-three-img"><%= image_tag "lovedish.png", alt: "top dishes", width: 50, height: 50 %></div>
       <div>
-      <% @weekly_dishes.each do |name, quantity|%>
+        <% @weekly_dishes.each do |name, quantity|%>
         <%= "Quantity : #{quantity} - Name :#{name}" %>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@
       <div><h5>Average revenue by server</h5></div>
     </div>
     <div class="little-graph-items-four">
-      <%= image_tag "food-serving.png", alt: "top dishes", width: 50, height: 50 %>
+      <div class="little-four-img"> <%= image_tag "food-serving.png", alt: "top dishes", width: 50, height: 50 %></div>
       <div><%= @weekly_average_server %>€</div>
     </div>
   </div>
