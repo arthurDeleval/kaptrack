@@ -1,6 +1,3 @@
-<div class="menu-navbar transparent">
-  <div class="menu">Menu</div>
-</div>
 <div class="banner-menu">
   <div class="banner-menu-description">
     <p>
@@ -18,8 +15,27 @@
             <% end %>
           <div class="card-trip-infos">
             <div>
+              <div class="card-trip-title">
               <h2> <%= recipe.name %></h2>
-              <p> <%= recipe.specificity%></p>
+              <% case recipe.specificity %>
+                <% when "Spicy" %>
+                  <h2><i class="fas fa-pepper-hot"></i></h2>
+                <% when "Very spicy" %>
+                  <h2><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h2>
+                <% when "Very very spicy" %>
+                  <h2><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h2>
+                <% when "Fat" %>
+                  <h2><i class="fas fa-weight-hanging"></i></h2>
+                <% when "Lacto-ovo" %>
+                  <h2><i class="fas fa-egg"></i></h2>
+                <% when "Vegan" %>
+                  <h2><i class="fas fa-carrot"></i></h2>
+                <% when "Sweet" %>
+                  <h2><i class="fas fa-cookie-bite"></i></h2>
+                <% else %>
+                <p></p>
+              <% end %>
+              </div>
               <p class="menu_meal_desc"> <%= recipe.meal_description %> </p>
             </div>
             <h2 class="card-trip-pricing"> <%= recipe.price %> € </h2>

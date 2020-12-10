@@ -199,7 +199,6 @@
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -223,7 +222,19 @@
   height: 50px;
 }
 
+.card-trip-title{
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  width: 100%;
+}
 
+.card-trip-pricing{
+  text-align: right;
+}
 
-
-
+@media(max-width: 768px) {
+  .cards-menus-grid {
+    grid-template-columns: 1fr;
+  }
+}
