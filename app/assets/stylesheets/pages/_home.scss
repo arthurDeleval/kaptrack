@@ -110,7 +110,7 @@ h1 {
 .card-infos-number {
   padding: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   height: 50%;
   width: 100%;
     span {
@@ -118,6 +118,17 @@ h1 {
     }
 }
 
+.card-infos-number-products{
+    padding: 0px;
+    display: flex;
+    justify-content: normal;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    span {
+      margin-left: 10px;
+    }
+}
 
 .card-infos-other {
   padding: 0px;
