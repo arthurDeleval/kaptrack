@@ -13,7 +13,7 @@ const initRevenueChart = () => {
         labels: date,
         datasets: [
           {
-            label: 'Revenue',
+            label: 'Revenue(€)',
             data: perf,
             backgroundColor: '#4BC0C0',
             borderWidth: 2
@@ -26,10 +26,16 @@ const initRevenueChart = () => {
         },
         scales: {
           xAxes: [{
-            stacked: true
+            stacked: true,
+            gridLines: {
+              display:false
+            }
           }],
           yAxes: [{
-            stacked: true
+            stacked: true,
+            gridLines: {
+              display:false
+            }  
           }]
         }
       }
