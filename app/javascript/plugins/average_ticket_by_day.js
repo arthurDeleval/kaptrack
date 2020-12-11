@@ -12,7 +12,7 @@ const initAverageTicketChart = () => {
         labels: date,
         datasets: [
           {
-            label: 'Average ticket',
+            label: 'Average ticket(€)',
             data: averageTicket,
             backgroundColor: '#34D399',
             borderColor: '#34D399',
@@ -38,7 +38,7 @@ const initAverageTicketChart = () => {
           yAxes: [{
             gridLines: {
               display:false
-            }  
+            }
           }]
         }
       }
